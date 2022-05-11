@@ -24,13 +24,13 @@
         </AssociationConnector>
         <AssociationConnector Association="RestGestModel.EstadoPedido" />
         <AssociationConnector Association="RestGestModel.MetodoPagamentoPagamento" />
-        <AssociationConnector Association="RestGestModel.TrabalhadorPedido" />
         <AssociationConnector Association="RestGestModel.RestaurantePedido" ></AssociationConnector>
         <AssociationConnector Association="RestGestModel.ItemMenuPedido" />
         <AssociationConnector Association="RestGestModel.PessoaMorada" />
         <AssociationConnector Association="RestGestModel.PedidoPagamento" />
-        <AssociationConnector Association="RestGestModel.ClientePedido" />
         <AssociationConnector Association="RestGestModel.ItemMenuCategoria" />
+        <AssociationConnector Association="RestGestModel.TrabalhadorPedido" />
+        <AssociationConnector Association="RestGestModel.ClientePedido" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -42,10 +42,6 @@
             <End Role="MetodoPagamento" EntitySet="MetodoPagamento" />
             <End Role="Pagamento" EntitySet="Pagamento" />
           </AssociationSet>
-          <AssociationSet Name="TrabalhadorPedido" Association="RestGestModel.TrabalhadorPedido">
-            <End Role="Trabalhador" EntitySet="PessoaSet" />
-            <End Role="Pedido" EntitySet="Pedido" />
-          </AssociationSet>
           <AssociationSet Name="RestaurantePedido" Association="RestGestModel.RestaurantePedido">
             <End Role="Restaurante" EntitySet="Restaurante" />
             <End Role="Pedido" EntitySet="Pedido" />
@@ -62,13 +58,17 @@
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="Pagamento" EntitySet="Pagamento" />
           </AssociationSet>
-          <AssociationSet Name="ClientePedido" Association="RestGestModel.ClientePedido">
-            <End Role="Cliente" EntitySet="PessoaSet" />
-            <End Role="Pedido" EntitySet="Pedido" />
-          </AssociationSet>
           <AssociationSet Name="ItemMenuCategoria" Association="RestGestModel.ItemMenuCategoria">
             <End Role="ItemMenu" EntitySet="ItemMenu" />
             <End Role="Categoria" EntitySet="Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="TrabalhadorPedido" Association="RestGestModel.TrabalhadorPedido">
+            <End Role="Trabalhador" EntitySet="PessoaSet" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="ClientePedido" Association="RestGestModel.ClientePedido">
+            <End Role="Cliente" EntitySet="PessoaSet" />
+            <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Restaurante">
@@ -95,6 +95,9 @@
           <NavigationProperty Name="Pessoa" Relationship="RestGestModel.PessoaMorada" FromRole="Morada" ToRole="Pessoa" />
         </EntityType>
         <EntityType Name="Pessoa">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
           <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Morada" Type="String" Nullable="false" />
           <Property Name="Telemovel" Type="String" Nullable="false" FixedLength="true" MaxLength="9" />
@@ -120,12 +123,14 @@
           <Property Name="ValorTotal" Type="Double" Nullable="false" DefaultValue="0" />
           <NavigationProperty Name="Estado" Relationship="RestGestModel.EstadoPedido" FromRole="Pedido" ToRole="Estado" />
           <Property Name="EstadoIdEstado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Trabalhador" Relationship="RestGestModel.TrabalhadorPedido" FromRole="Pedido" ToRole="Trabalhador" />
           <NavigationProperty Name="Restaurante" Relationship="RestGestModel.RestaurantePedido" FromRole="Pedido" ToRole="Restaurante" />
           <Property Name="RestauranteIdRestaurante" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ItemMenu" Relationship="RestGestModel.ItemMenuPedido" FromRole="Pedido" ToRole="ItemMenu" />
           <NavigationProperty Name="Pagamento" Relationship="RestGestModel.PedidoPagamento" FromRole="Pedido" ToRole="Pagamento" />
+          <NavigationProperty Name="Trabalhador" Relationship="RestGestModel.TrabalhadorPedido" FromRole="Pedido" ToRole="Trabalhador" />
+          <Property Name="TrabalhadorIdPessoa" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="RestGestModel.ClientePedido" FromRole="Pedido" ToRole="Cliente" />
+          <Property Name="ClienteIdPessoa" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Pagamento">
           <Key>
@@ -223,10 +228,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TrabalhadorPedido">
-          <End Type="RestGestModel.Trabalhador" Role="Trabalhador" Multiplicity="1" />
-          <End Type="RestGestModel.Pedido" Role="Pedido" Multiplicity="*" />
-        </Association>
         <Association Name="RestaurantePedido">
           <End Type="RestGestModel.Restaurante" Role="Restaurante" Multiplicity="1" />
           <End Type="RestGestModel.Pedido" Role="Pedido" Multiplicity="*" />
@@ -259,10 +260,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="ClientePedido">
-          <End Type="RestGestModel.Cliente" Role="Cliente" Multiplicity="1" />
-          <End Type="RestGestModel.Pedido" Role="Pedido" Multiplicity="*" />
-        </Association>
         <Association Name="ItemMenuCategoria">
           <End Type="RestGestModel.ItemMenu" Role="ItemMenu" Multiplicity="*" />
           <End Type="RestGestModel.Categoria" Role="Categoria" Multiplicity="1" />
@@ -272,6 +269,30 @@
             </Principal>
             <Dependent Role="ItemMenu">
               <PropertyRef Name="CategoriaIdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TrabalhadorPedido">
+          <End Type="RestGestModel.Trabalhador" Role="Trabalhador" Multiplicity="1" />
+          <End Type="RestGestModel.Pedido" Role="Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabalhador">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="TrabalhadorIdPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientePedido">
+          <End Type="RestGestModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="RestGestModel.Pedido" Role="Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="ClienteIdPessoa" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
