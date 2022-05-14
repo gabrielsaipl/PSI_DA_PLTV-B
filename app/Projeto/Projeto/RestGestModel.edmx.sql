@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/13/2022 10:53:17
+-- Date Created: 05/14/2022 16:02:00
 -- Generated from EDMX file: C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\RestGestModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,98 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_RestauranteTrabalhador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pessoa_Trabalhador] DROP CONSTRAINT [FK_RestauranteTrabalhador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RestauranteItemMenu_Restaurante]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RestauranteItemMenu] DROP CONSTRAINT [FK_RestauranteItemMenu_Restaurante];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RestauranteItemMenu_ItemMenu]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RestauranteItemMenu] DROP CONSTRAINT [FK_RestauranteItemMenu_ItemMenu];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EstadoPedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pedido] DROP CONSTRAINT [FK_EstadoPedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MetodoPagamentoPagamento]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pagamento] DROP CONSTRAINT [FK_MetodoPagamentoPagamento];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RestaurantePedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pedido] DROP CONSTRAINT [FK_RestaurantePedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ItemMenuPedido_ItemMenu]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ItemMenuPedido] DROP CONSTRAINT [FK_ItemMenuPedido_ItemMenu];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ItemMenuPedido_Pedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ItemMenuPedido] DROP CONSTRAINT [FK_ItemMenuPedido_Pedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoPagamento]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pagamento] DROP CONSTRAINT [FK_PedidoPagamento];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ItemMenuCategoria]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ItemMenu] DROP CONSTRAINT [FK_ItemMenuCategoria];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TrabalhadorPedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pedido] DROP CONSTRAINT [FK_TrabalhadorPedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClientePedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pedido] DROP CONSTRAINT [FK_ClientePedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PessoaMorada]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pessoa] DROP CONSTRAINT [FK_PessoaMorada];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RestauranteMorada]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Restaurante] DROP CONSTRAINT [FK_RestauranteMorada];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Trabalhador_inherits_Pessoa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pessoa_Trabalhador] DROP CONSTRAINT [FK_Trabalhador_inherits_Pessoa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Cliente_inherits_Pessoa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pessoa_Cliente] DROP CONSTRAINT [FK_Cliente_inherits_Pessoa];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Restaurante]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Restaurante];
+GO
+IF OBJECT_ID(N'[dbo].[Morada]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Morada];
+GO
+IF OBJECT_ID(N'[dbo].[Pessoa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pessoa];
+GO
+IF OBJECT_ID(N'[dbo].[Pedido]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pedido];
+GO
+IF OBJECT_ID(N'[dbo].[Pagamento]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pagamento];
+GO
+IF OBJECT_ID(N'[dbo].[MetodoPagamento]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MetodoPagamento];
+GO
+IF OBJECT_ID(N'[dbo].[Estado]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Estado];
+GO
+IF OBJECT_ID(N'[dbo].[ItemMenu]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ItemMenu];
+GO
+IF OBJECT_ID(N'[dbo].[Categoria]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categoria];
+GO
+IF OBJECT_ID(N'[dbo].[Pessoa_Trabalhador]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pessoa_Trabalhador];
+GO
+IF OBJECT_ID(N'[dbo].[Pessoa_Cliente]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pessoa_Cliente];
+GO
+IF OBJECT_ID(N'[dbo].[RestauranteItemMenu]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RestauranteItemMenu];
+GO
+IF OBJECT_ID(N'[dbo].[ItemMenuPedido]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ItemMenuPedido];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -31,7 +118,7 @@ GO
 CREATE TABLE [dbo].[Restaurante] (
     [IdRestaurante] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
-    [MoradaIdMorada] int  NOT NULL
+    [Morada_IdMorada] int  NOT NULL
 );
 GO
 
@@ -48,9 +135,8 @@ GO
 -- Creating table 'Pessoa'
 CREATE TABLE [dbo].[Pessoa] (
     [IdPessoa] int IDENTITY(1,1) NOT NULL,
-    [Morada] nvarchar(max)  NOT NULL,
     [Telemovel] nchar(9)  NOT NULL,
-    [MoradaIdMorada] int  NOT NULL
+    [Morada_IdMorada] int  NOT NULL
 );
 GO
 
@@ -394,34 +480,34 @@ ON [dbo].[Pedido]
     ([ClienteIdPessoa]);
 GO
 
--- Creating foreign key on [MoradaIdMorada] in table 'Pessoa'
+-- Creating foreign key on [Morada_IdMorada] in table 'Pessoa'
 ALTER TABLE [dbo].[Pessoa]
-ADD CONSTRAINT [FK_MoradaPessoa]
-    FOREIGN KEY ([MoradaIdMorada])
+ADD CONSTRAINT [FK_PessoaMorada]
+    FOREIGN KEY ([Morada_IdMorada])
     REFERENCES [dbo].[Morada]
         ([IdMorada])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_MoradaPessoa'
-CREATE INDEX [IX_FK_MoradaPessoa]
+-- Creating non-clustered index for FOREIGN KEY 'FK_PessoaMorada'
+CREATE INDEX [IX_FK_PessoaMorada]
 ON [dbo].[Pessoa]
-    ([MoradaIdMorada]);
+    ([Morada_IdMorada]);
 GO
 
--- Creating foreign key on [MoradaIdMorada] in table 'Restaurante'
+-- Creating foreign key on [Morada_IdMorada] in table 'Restaurante'
 ALTER TABLE [dbo].[Restaurante]
-ADD CONSTRAINT [FK_MoradaRestaurante]
-    FOREIGN KEY ([MoradaIdMorada])
+ADD CONSTRAINT [FK_RestauranteMorada]
+    FOREIGN KEY ([Morada_IdMorada])
     REFERENCES [dbo].[Morada]
         ([IdMorada])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_MoradaRestaurante'
-CREATE INDEX [IX_FK_MoradaRestaurante]
+-- Creating non-clustered index for FOREIGN KEY 'FK_RestauranteMorada'
+CREATE INDEX [IX_FK_RestauranteMorada]
 ON [dbo].[Restaurante]
-    ([MoradaIdMorada]);
+    ([Morada_IdMorada]);
 GO
 
 -- Creating foreign key on [IdPessoa] in table 'Pessoa_Trabalhador'

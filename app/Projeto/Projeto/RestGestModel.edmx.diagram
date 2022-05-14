@@ -29,10 +29,10 @@
         <AssociationConnector Association="RestGestModel.ItemMenuCategoria" />
         <AssociationConnector Association="RestGestModel.TrabalhadorPedido" />
         <AssociationConnector Association="RestGestModel.ClientePedido" />
-        <AssociationConnector Association="RestGestModel.MoradaPessoa" />
         <InheritanceConnector EntityType="RestGestModel.Trabalhador" />
         <InheritanceConnector EntityType="RestGestModel.Cliente" />
-        <AssociationConnector Association="RestGestModel.MoradaRestaurante" />
+        <AssociationConnector Association="RestGestModel.PessoaMorada" />
+        <AssociationConnector Association="RestGestModel.RestauranteMorada" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

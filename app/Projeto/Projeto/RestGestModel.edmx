@@ -67,13 +67,13 @@
       <End Role="Cliente" EntitySet="Pessoa_Cliente" />
       <End Role="Pedido" EntitySet="Pedido" />
     </AssociationSet>
-    <AssociationSet Name="MoradaPessoa" Association="RestGestModel.Store.MoradaPessoa">
-      <End Role="Morada" EntitySet="Morada" />
+    <AssociationSet Name="PessoaMorada" Association="RestGestModel.Store.PessoaMorada">
       <End Role="Pessoa" EntitySet="Pessoa" />
-    </AssociationSet>
-    <AssociationSet Name="MoradaRestaurante" Association="RestGestModel.Store.MoradaRestaurante">
       <End Role="Morada" EntitySet="Morada" />
+    </AssociationSet>
+    <AssociationSet Name="RestauranteMorada" Association="RestGestModel.Store.RestauranteMorada">
       <End Role="Restaurante" EntitySet="Restaurante" />
+      <End Role="Morada" EntitySet="Morada" />
     </AssociationSet>
     <AssociationSet Name="FK_Trabalhador_inherits_Pessoa" Association="RestGestModel.Store.FK_Trabalhador_inherits_Pessoa">
       <End Role="Pessoa" EntitySet="Pessoa" />
@@ -90,7 +90,7 @@
     </Key>
     <Property Name="IdRestaurante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MoradaIdMorada" Type="int" Nullable="false" />
+    <Property Name="Morada_IdMorada" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Morada">
     <Key>
@@ -107,9 +107,8 @@
       <PropertyRef Name="IdPessoa" />
     </Key>
     <Property Name="IdPessoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Morada" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Telemovel" Type="nchar" Nullable="false" MaxLength="9" />
-    <Property Name="MoradaIdMorada" Type="int" Nullable="false" />
+    <Property Name="Morada_IdMorada" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>
@@ -295,27 +294,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="MoradaPessoa">
-    <End Role="Morada" Type="RestGestModel.Store.Morada" Multiplicity="1" />
+  <Association Name="PessoaMorada">
     <End Role="Pessoa" Type="RestGestModel.Store.Pessoa" Multiplicity="*" />
+    <End Role="Morada" Type="RestGestModel.Store.Morada" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Morada">
         <PropertyRef Name="IdMorada" />
       </Principal>
       <Dependent Role="Pessoa">
-        <PropertyRef Name="MoradaIdMorada" />
+        <PropertyRef Name="Morada_IdMorada" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="MoradaRestaurante">
-    <End Role="Morada" Type="RestGestModel.Store.Morada" Multiplicity="1" />
+  <Association Name="RestauranteMorada">
     <End Role="Restaurante" Type="RestGestModel.Store.Restaurante" Multiplicity="*" />
+    <End Role="Morada" Type="RestGestModel.Store.Morada" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Morada">
         <PropertyRef Name="IdMorada" />
       </Principal>
       <Dependent Role="Restaurante">
-        <PropertyRef Name="MoradaIdMorada" />
+        <PropertyRef Name="Morada_IdMorada" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -449,13 +448,13 @@
             <End Role="Cliente" EntitySet="Pessoa" />
             <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
-          <AssociationSet Name="MoradaPessoa" Association="RestGestModel.MoradaPessoa">
-            <End Role="Morada" EntitySet="Morada" />
+          <AssociationSet Name="PessoaMorada" Association="RestGestModel.PessoaMorada">
             <End Role="Pessoa" EntitySet="Pessoa" />
-          </AssociationSet>
-          <AssociationSet Name="MoradaRestaurante" Association="RestGestModel.MoradaRestaurante">
             <End Role="Morada" EntitySet="Morada" />
+          </AssociationSet>
+          <AssociationSet Name="RestauranteMorada" Association="RestGestModel.RestauranteMorada">
             <End Role="Restaurante" EntitySet="Restaurante" />
+            <End Role="Morada" EntitySet="Morada" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Restaurante">
@@ -467,8 +466,7 @@
           <NavigationProperty Name="Trabalhador" Relationship="RestGestModel.RestauranteTrabalhador" FromRole="Restaurante" ToRole="Trabalhador" />
           <NavigationProperty Name="ItemMenu" Relationship="RestGestModel.RestauranteItemMenu" FromRole="Restaurante" ToRole="ItemMenu" />
           <NavigationProperty Name="Pedido" Relationship="RestGestModel.RestaurantePedido" FromRole="Restaurante" ToRole="Pedido" />
-          <NavigationProperty Name="Morada" Relationship="RestGestModel.MoradaRestaurante" FromRole="Restaurante" ToRole="Morada" />
-          <Property Name="MoradaIdMorada" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Morada" Relationship="RestGestModel.RestauranteMorada" FromRole="Restaurante" ToRole="Morada" />
         </EntityType>
         <EntityType Name="Morada">
           <Key>
@@ -479,18 +477,16 @@
           <Property Name="Cidade" Type="String" Nullable="false" />
           <Property Name="CodPostal" Type="String" Nullable="false" MaxLength="8" FixedLength="false" />
           <Property Name="Pais" Type="String" Nullable="false" />
-          <NavigationProperty Name="Pessoa" Relationship="RestGestModel.MoradaPessoa" FromRole="Morada" ToRole="Pessoa" />
-          <NavigationProperty Name="Restaurante" Relationship="RestGestModel.MoradaRestaurante" FromRole="Morada" ToRole="Restaurante" />
+          <NavigationProperty Name="Pessoa" Relationship="RestGestModel.PessoaMorada" FromRole="Morada" ToRole="Pessoa" />
+          <NavigationProperty Name="Restaurante" Relationship="RestGestModel.RestauranteMorada" FromRole="Morada" ToRole="Restaurante" />
         </EntityType>
         <EntityType Name="Pessoa">
           <Key>
             <PropertyRef Name="IdPessoa" />
           </Key>
           <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Morada" Type="String" Nullable="false" />
           <Property Name="Telemovel" Type="String" Nullable="false" FixedLength="true" MaxLength="9" />
-          <NavigationProperty Name="Morada1" Relationship="RestGestModel.MoradaPessoa" FromRole="Pessoa" ToRole="Morada" />
-          <Property Name="MoradaIdMorada" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Morada" Relationship="RestGestModel.PessoaMorada" FromRole="Pessoa" ToRole="Morada" />
         </EntityType>
         <EntityType Name="Trabalhador" BaseType="RestGestModel.Pessoa" >
           <Property Name="Salario" Type="Double" Nullable="false" />
@@ -677,29 +673,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="MoradaPessoa">
+        <Association Name="PessoaMorada">
+          <End Type="RestGestModel.Pessoa" Role="Pessoa" Multiplicity="1" />
           <End Type="RestGestModel.Morada" Role="Morada" Multiplicity="1" />
-          <End Type="RestGestModel.Pessoa" Role="Pessoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Morada">
-              <PropertyRef Name="IdMorada" />
-            </Principal>
-            <Dependent Role="Pessoa">
-              <PropertyRef Name="MoradaIdMorada" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
-        <Association Name="MoradaRestaurante">
+        <Association Name="RestauranteMorada">
+          <End Type="RestGestModel.Restaurante" Role="Restaurante" Multiplicity="1" />
           <End Type="RestGestModel.Morada" Role="Morada" Multiplicity="1" />
-          <End Type="RestGestModel.Restaurante" Role="Restaurante" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Morada">
-              <PropertyRef Name="IdMorada" />
-            </Principal>
-            <Dependent Role="Restaurante">
-              <PropertyRef Name="MoradaIdMorada" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -712,7 +692,6 @@
         <MappingFragment StoreEntitySet="Restaurante">
           <ScalarProperty Name="IdRestaurante" ColumnName="IdRestaurante" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="MoradaIdMorada" ColumnName="MoradaIdMorada" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -731,9 +710,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(RestGestModel.Pessoa)">
         <MappingFragment StoreEntitySet="Pessoa">
           <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
-          <ScalarProperty Name="Morada" ColumnName="Morada" />
           <ScalarProperty Name="Telemovel" ColumnName="Telemovel" />
-          <ScalarProperty Name="MoradaIdMorada" ColumnName="MoradaIdMorada" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(RestGestModel.Trabalhador)">
@@ -827,6 +804,22 @@
       </EndProperty>
       <EndProperty Name="Pedido">
         <ScalarProperty Name="IdPedido" ColumnName="Pedido_IdPedido" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PessoaMorada" TypeName="RestGestModel.PessoaMorada" StoreEntitySet="Pessoa">
+      <EndProperty Name="Morada">
+        <ScalarProperty Name="IdMorada" ColumnName="Morada_IdMorada" />
+      </EndProperty>
+      <EndProperty Name="Pessoa">
+        <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RestauranteMorada" TypeName="RestGestModel.RestauranteMorada" StoreEntitySet="Restaurante">
+      <EndProperty Name="Morada">
+        <ScalarProperty Name="IdMorada" ColumnName="Morada_IdMorada" />
+      </EndProperty>
+      <EndProperty Name="Restaurante">
+        <ScalarProperty Name="IdRestaurante" ColumnName="IdRestaurante" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

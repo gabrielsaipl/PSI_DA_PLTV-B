@@ -15,10 +15,8 @@ namespace Projeto
     public partial class Pessoa
     {
         public int IdPessoa { get; set; }
-        public string Morada { get; set; }
         public string Telemovel { get; set; }
-        public int MoradaIdMorada { get; set; }
     
-        public virtual Morada Morada1 { get; set; }
+        public virtual Morada Morada { get; set; }
     }
 }
