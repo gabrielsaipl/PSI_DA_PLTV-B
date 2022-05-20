@@ -173,6 +173,7 @@
     <Property Name="Salario" Type="float" Nullable="false" />
     <Property Name="Posicao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RestauranteIdRestaurante" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
     <Property Name="IdPessoa" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pessoa_Cliente">
@@ -496,6 +497,7 @@
           <NavigationProperty Name="Restaurante" Relationship="RestGestModel.RestauranteTrabalhador" FromRole="Trabalhador" ToRole="Restaurante" />
           <Property Name="RestauranteIdRestaurante" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pedido" Relationship="RestGestModel.TrabalhadorPedido" FromRole="Trabalhador" ToRole="Pedido" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Cliente" BaseType="RestGestModel.Pessoa" >
           <Property Name="TotalGasto" Type="Double" Nullable="false" DefaultValue="0" />
@@ -722,6 +724,7 @@
           <ScalarProperty Name="Salario" ColumnName="Salario" />
           <ScalarProperty Name="Posicao" ColumnName="Posicao" />
           <ScalarProperty Name="RestauranteIdRestaurante" ColumnName="RestauranteIdRestaurante" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(RestGestModel.Cliente)">

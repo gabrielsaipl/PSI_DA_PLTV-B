@@ -23,6 +23,7 @@ namespace Projeto
         public double Salario { get; set; }
         public string Posicao { get; set; }
         public int RestauranteIdRestaurante { get; set; }
+        public bool Ativo { get; set; }
     
         public virtual Restaurante Restaurante { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

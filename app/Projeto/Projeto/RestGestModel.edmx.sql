@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/20/2022 09:40:51
+-- Date Created: 05/20/2022 14:02:22
 -- Generated from EDMX file: C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\RestGestModel.edmx
 -- --------------------------------------------------
 
@@ -201,6 +201,7 @@ CREATE TABLE [dbo].[Pessoa_Trabalhador] (
     [Salario] float  NOT NULL,
     [Posicao] nvarchar(max)  NOT NULL,
     [RestauranteIdRestaurante] int  NOT NULL,
+    [Ativo] bit  NOT NULL,
     [IdPessoa] int  NOT NULL
 );
 GO
