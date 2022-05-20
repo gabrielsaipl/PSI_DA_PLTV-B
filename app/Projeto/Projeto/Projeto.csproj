@@ -70,6 +70,12 @@
     <Compile Include="FormAddCliente.Designer.cs">
       <DependentUpon>FormAddCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddRestaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddRestaurante.Designer.cs">
+      <DependentUpon>FormAddRestaurante.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRestaurantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRestaurantes.Designer.cs">
+      <DependentUpon>FormRestaurantes.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemMenu.cs">
       <DependentUpon>RestGestModel.tt</DependentUpon>
@@ -126,11 +138,17 @@
     <EmbeddedResource Include="FormAddCliente.resx">
       <DependentUpon>FormAddCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddRestaurante.resx">
+      <DependentUpon>FormAddRestaurante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRestaurantes.resx">
+      <DependentUpon>FormRestaurantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

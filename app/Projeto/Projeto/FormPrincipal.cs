@@ -31,7 +31,8 @@ namespace Projeto
 
         private void bRestaurantes_Click(object sender, EventArgs e)
         {
-
+            FormRestaurantes FRestaurantes = new FormRestaurantes();
+            FRestaurantes.ShowDialog();
         }
 
         private void bMetodosPagamento_Click(object sender, EventArgs e)

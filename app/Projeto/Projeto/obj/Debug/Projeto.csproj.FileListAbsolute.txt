@@ -16,3 +16,5 @@ C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPrincipal.resources
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormClientes.resources
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormAddCliente.resources
+C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormRestaurantes.resources
+C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormAddRestaurante.resources

@@ -43,6 +43,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbCodPostal = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tbTelemovel = new System.Windows.Forms.MaskedTextBox();
             this.tbNif = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.btNovoCliente = new System.Windows.Forms.Button();
             this.btFiltrar = new System.Windows.Forms.Button();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,7 +85,7 @@
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             // 
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -210,6 +210,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cliente";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(136, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 20);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "0,0 €";
+            // 
             // tbTelemovel
             // 
             this.tbTelemovel.Location = new System.Drawing.Point(140, 52);
@@ -324,21 +334,11 @@
             this.tbFiltrar.Size = new System.Drawing.Size(258, 22);
             this.tbFiltrar.TabIndex = 13;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(136, 82);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 20);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "0,0 €";
-            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(241)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(881, 567);
             this.Controls.Add(this.tbFiltrar);
             this.Controls.Add(this.btFiltrar);
