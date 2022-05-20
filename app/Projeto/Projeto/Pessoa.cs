@@ -16,6 +16,7 @@ namespace Projeto
     {
         public int IdPessoa { get; set; }
         public string Telemovel { get; set; }
+        public string Nome { get; set; }
     
         public virtual Morada Morada { get; set; }
     }

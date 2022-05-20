@@ -108,6 +108,7 @@
     </Key>
     <Property Name="IdPessoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Telemovel" Type="nchar" Nullable="false" MaxLength="9" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Morada_IdMorada" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pedido">
@@ -487,6 +488,7 @@
           <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Telemovel" Type="String" Nullable="false" FixedLength="true" MaxLength="9" />
           <NavigationProperty Name="Morada" Relationship="RestGestModel.PessoaMorada" FromRole="Pessoa" ToRole="Morada" />
+          <Property Name="Nome" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Trabalhador" BaseType="RestGestModel.Pessoa" >
           <Property Name="Salario" Type="Double" Nullable="false" />
@@ -711,6 +713,7 @@
         <MappingFragment StoreEntitySet="Pessoa">
           <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
           <ScalarProperty Name="Telemovel" ColumnName="Telemovel" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(RestGestModel.Trabalhador)">
