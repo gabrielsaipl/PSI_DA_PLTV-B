@@ -34,6 +34,7 @@
           <ScalarProperty Name="Salario" ColumnName="Salario" />
           <ScalarProperty Name="Posicao" ColumnName="Posicao" />
           <ScalarProperty Name="RestauranteIdRestaurante" ColumnName="RestauranteIdRestaurante" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(RestGestModel.Cliente)">

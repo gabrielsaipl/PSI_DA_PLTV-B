@@ -64,6 +64,12 @@
     <Compile Include="Estado.cs">
       <DependentUpon>RestGestModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormAddCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCliente.Designer.cs">
+      <DependentUpon>FormAddCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Trabalhador.cs">
       <DependentUpon>RestGestModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAddCliente.resx">
+      <DependentUpon>FormAddCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>

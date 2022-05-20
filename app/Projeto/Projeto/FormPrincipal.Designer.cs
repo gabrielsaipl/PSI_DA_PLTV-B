@@ -44,6 +44,8 @@
             this.bClientes.BackColor = System.Drawing.SystemColors.Window;
             this.bClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bClientes.Location = new System.Drawing.Point(78, 75);
+            this.bClientes.MaximumSize = new System.Drawing.Size(180, 96);
+            this.bClientes.MinimumSize = new System.Drawing.Size(180, 96);
             this.bClientes.Name = "bClientes";
             this.bClientes.Size = new System.Drawing.Size(180, 96);
             this.bClientes.TabIndex = 0;
@@ -118,7 +120,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(590, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(590, 30);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -126,7 +128,7 @@
             // 
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -134,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(184)))), ((int)(((byte)(82)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(241)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(590, 450);
             this.Controls.Add(this.bPedidos);
             this.Controls.Add(this.bMenus);

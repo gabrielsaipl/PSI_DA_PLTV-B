@@ -25,8 +25,8 @@ namespace Projeto
 
         private void bClientes_Click(object sender, EventArgs e)
         {
-            FormPrincipal Fa = new FormPrincipal();
-            Fa.ShowDialog();
+            FormClientes FClientes = new FormClientes();
+            FClientes.ShowDialog();
         }
 
         private void bRestaurantes_Click(object sender, EventArgs e)

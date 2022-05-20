@@ -97,6 +97,7 @@
     <NavigationProperty Name="Restaurante" Relationship="RestGestModel.RestauranteTrabalhador" FromRole="Trabalhador" ToRole="Restaurante" />
     <Property Name="RestauranteIdRestaurante" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pedido" Relationship="RestGestModel.TrabalhadorPedido" FromRole="Trabalhador" ToRole="Pedido" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Cliente" BaseType="RestGestModel.Pessoa">
     <Property Name="TotalGasto" Type="Double" Nullable="false" DefaultValue="0" />

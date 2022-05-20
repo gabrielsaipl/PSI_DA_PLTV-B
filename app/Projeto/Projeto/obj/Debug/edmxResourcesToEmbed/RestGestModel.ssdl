@@ -168,6 +168,7 @@
     <Property Name="Salario" Type="float" Nullable="false" />
     <Property Name="Posicao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RestauranteIdRestaurante" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
     <Property Name="IdPessoa" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pessoa_Cliente">

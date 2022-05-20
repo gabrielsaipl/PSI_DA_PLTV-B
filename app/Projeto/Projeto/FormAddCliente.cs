@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace Projeto
 {
-    public partial class FormClientes : Form
+    public partial class FormAddCliente : Form
     {
-        public FormClientes()
+        public FormAddCliente()
         {
             InitializeComponent();
             this.ControlBox = false;
-        }
-
-        private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,10 +23,9 @@ namespace Projeto
             Application.Exit();
         }
 
-        private void btNovoCliente_Click(object sender, EventArgs e)
+        private void cancelarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAddCliente addcliente = new FormAddCliente();
-            addcliente.ShowDialog();
+            this.Close();
         }
     }
 }
