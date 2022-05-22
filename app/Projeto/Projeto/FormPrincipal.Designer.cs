@@ -36,6 +36,7 @@
             this.bMenus = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             // 
             this.bClientes.BackColor = System.Drawing.SystemColors.Window;
             this.bClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bClientes.Location = new System.Drawing.Point(78, 75);
+            this.bClientes.Location = new System.Drawing.Point(68, 111);
             this.bClientes.MaximumSize = new System.Drawing.Size(180, 96);
             this.bClientes.MinimumSize = new System.Drawing.Size(180, 96);
             this.bClientes.Name = "bClientes";
@@ -57,7 +58,7 @@
             // 
             this.bRestaurantes.BackColor = System.Drawing.SystemColors.Window;
             this.bRestaurantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRestaurantes.Location = new System.Drawing.Point(321, 75);
+            this.bRestaurantes.Location = new System.Drawing.Point(311, 111);
             this.bRestaurantes.Name = "bRestaurantes";
             this.bRestaurantes.Size = new System.Drawing.Size(180, 96);
             this.bRestaurantes.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             this.bCategoriasItem.BackColor = System.Drawing.SystemColors.Window;
             this.bCategoriasItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCategoriasItem.Location = new System.Drawing.Point(321, 187);
+            this.bCategoriasItem.Location = new System.Drawing.Point(311, 223);
             this.bCategoriasItem.Name = "bCategoriasItem";
             this.bCategoriasItem.Size = new System.Drawing.Size(180, 96);
             this.bCategoriasItem.TabIndex = 3;
@@ -81,7 +82,7 @@
             // 
             this.bMetodosPagamento.BackColor = System.Drawing.SystemColors.Window;
             this.bMetodosPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bMetodosPagamento.Location = new System.Drawing.Point(78, 187);
+            this.bMetodosPagamento.Location = new System.Drawing.Point(68, 223);
             this.bMetodosPagamento.Name = "bMetodosPagamento";
             this.bMetodosPagamento.Size = new System.Drawing.Size(180, 96);
             this.bMetodosPagamento.TabIndex = 2;
@@ -93,7 +94,7 @@
             // 
             this.bPedidos.BackColor = System.Drawing.SystemColors.Window;
             this.bPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPedidos.Location = new System.Drawing.Point(321, 303);
+            this.bPedidos.Location = new System.Drawing.Point(311, 339);
             this.bPedidos.Name = "bPedidos";
             this.bPedidos.Size = new System.Drawing.Size(180, 96);
             this.bPedidos.TabIndex = 5;
@@ -105,7 +106,7 @@
             // 
             this.bMenus.BackColor = System.Drawing.SystemColors.Window;
             this.bMenus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bMenus.Location = new System.Drawing.Point(78, 303);
+            this.bMenus.Location = new System.Drawing.Point(68, 339);
             this.bMenus.Name = "bMenus";
             this.bMenus.Size = new System.Drawing.Size(180, 96);
             this.bMenus.TabIndex = 4;
@@ -120,7 +121,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(590, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(590, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -128,16 +129,27 @@
             // 
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(189, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 38);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Rest Gest";
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(241)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(590, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bPedidos);
             this.Controls.Add(this.bMenus);
             this.Controls.Add(this.bCategoriasItem);
@@ -152,6 +164,7 @@
             this.MinimumSize = new System.Drawing.Size(608, 497);
             this.Name = "FormPrincipal";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REST GEST";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -170,6 +183,7 @@
         private System.Windows.Forms.Button bMenus;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

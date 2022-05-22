@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 namespace Projeto
 {
-    public partial class FormRestaurantes : Form
+    public partial class FormMenuRestaurante : Form
     {
-        public FormRestaurantes()
+        public FormMenuRestaurante()
         {
             InitializeComponent();
             this.ControlBox = false;
         }
-
 
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -29,16 +28,16 @@ namespace Projeto
             Application.Exit();
         }
 
-        private void btNovo_Click(object sender, EventArgs e)
+        private void btCategorias_Click(object sender, EventArgs e)
         {
-            FormAddRestaurante formAddRestaurante = new FormAddRestaurante();
-            formAddRestaurante.ShowDialog();
+            FormCategorias formCategorias = new FormCategorias();
+            formCategorias.ShowDialog();
         }
 
-        private void btGerir_Click(object sender, EventArgs e)
+        private void btItensCadeia_Click(object sender, EventArgs e)
         {
-            FormGestaoRestaurante formGestaoRestaurante = new FormGestaoRestaurante();
-            formGestaoRestaurante.ShowDialog();
+            FormItensCadeia formItensCadeia = new FormItensCadeia();
+            formItensCadeia.ShowDialog();
         }
     }
 }

@@ -45,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.btEliminar = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
             this.btGerir = new System.Windows.Forms.Button();
             this.btCategorias = new System.Windows.Forms.Button();
@@ -62,7 +61,7 @@
             this.voltarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1082, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1082, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,7 +99,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.Cidade);
-            this.groupBox1.Location = new System.Drawing.Point(13, 199);
+            this.groupBox1.Location = new System.Drawing.Point(13, 187);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(404, 152);
             this.groupBox1.TabIndex = 15;
@@ -200,7 +199,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(80, 171);
+            this.label7.Location = new System.Drawing.Point(80, 159);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 20);
             this.label7.TabIndex = 3;
@@ -208,23 +207,10 @@
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(153, 171);
+            this.tbNome.Location = new System.Drawing.Point(153, 159);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(258, 22);
             this.tbNome.TabIndex = 4;
-            // 
-            // btEliminar
-            // 
-            this.btEliminar.BackColor = System.Drawing.SystemColors.Window;
-            this.btEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.ForeColor = System.Drawing.Color.Red;
-            this.btEliminar.Location = new System.Drawing.Point(8, 357);
-            this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(403, 41);
-            this.btEliminar.TabIndex = 16;
-            this.btEliminar.Text = "Eliminar restaurante selecionado";
-            this.btEliminar.UseVisualStyleBackColor = false;
             // 
             // btNovo
             // 
@@ -246,6 +232,7 @@
             this.btGerir.TabIndex = 18;
             this.btGerir.Text = "Gerir Restaurante";
             this.btGerir.UseVisualStyleBackColor = false;
+            this.btGerir.Click += new System.EventHandler(this.btGerir_Click);
             // 
             // btCategorias
             // 
@@ -277,7 +264,6 @@
             this.Controls.Add(this.btCategorias);
             this.Controls.Add(this.btGerir);
             this.Controls.Add(this.btNovo);
-            this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.label1);
@@ -289,6 +275,7 @@
             this.MaximumSize = new System.Drawing.Size(1100, 530);
             this.MinimumSize = new System.Drawing.Size(1100, 530);
             this.Name = "FormRestaurantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Restaurantes";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -318,7 +305,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btNovo;
         private System.Windows.Forms.Button btGerir;
         private System.Windows.Forms.Button btCategorias;

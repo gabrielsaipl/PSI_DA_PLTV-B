@@ -70,17 +70,71 @@
     <Compile Include="FormAddCliente.Designer.cs">
       <DependentUpon>FormAddCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddItem.Designer.cs">
+      <DependentUpon>FormAddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddRestaurante.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddRestaurante.Designer.cs">
       <DependentUpon>FormAddRestaurante.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddTrabalhador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddTrabalhador.Designer.cs">
+      <DependentUpon>FormAddTrabalhador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategorias.Designer.cs">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestaoRestaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestaoRestaurante.Designer.cs">
+      <DependentUpon>FormGestaoRestaurante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormItensCadeia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItensCadeia.Designer.cs">
+      <DependentUpon>FormItensCadeia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuRestaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuRestaurante.Designer.cs">
+      <DependentUpon>FormMenuRestaurante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMetodosPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMetodosPagamento.Designer.cs">
+      <DependentUpon>FormMetodosPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagamentos.Designer.cs">
+      <DependentUpon>FormPagamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPedidos.Designer.cs">
+      <DependentUpon>FormPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -138,11 +192,38 @@
     <EmbeddedResource Include="FormAddCliente.resx">
       <DependentUpon>FormAddCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddItem.resx">
+      <DependentUpon>FormAddItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddRestaurante.resx">
       <DependentUpon>FormAddRestaurante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddTrabalhador.resx">
+      <DependentUpon>FormAddTrabalhador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategorias.resx">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestaoRestaurante.resx">
+      <DependentUpon>FormGestaoRestaurante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormItensCadeia.resx">
+      <DependentUpon>FormItensCadeia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuRestaurante.resx">
+      <DependentUpon>FormMenuRestaurante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMetodosPagamento.resx">
+      <DependentUpon>FormMetodosPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagamentos.resx">
+      <DependentUpon>FormPagamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPedidos.resx">
+      <DependentUpon>FormPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

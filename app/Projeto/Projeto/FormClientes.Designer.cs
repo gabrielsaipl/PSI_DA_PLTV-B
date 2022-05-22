@@ -34,8 +34,8 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Pais = new System.Windows.Forms.TextBox();
-            this.Cidade = new System.Windows.Forms.TextBox();
+            this.tbPais = new System.Windows.Forms.TextBox();
+            this.tbCidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbMorada = new System.Windows.Forms.TextBox();
@@ -85,7 +85,7 @@
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             // 
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -117,19 +117,19 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "País :";
             // 
-            // Pais
+            // tbPais
             // 
-            this.Pais.Location = new System.Drawing.Point(140, 24);
-            this.Pais.Name = "Pais";
-            this.Pais.Size = new System.Drawing.Size(258, 22);
-            this.Pais.TabIndex = 4;
+            this.tbPais.Location = new System.Drawing.Point(140, 24);
+            this.tbPais.Name = "tbPais";
+            this.tbPais.Size = new System.Drawing.Size(258, 22);
+            this.tbPais.TabIndex = 4;
             // 
-            // Cidade
+            // tbCidade
             // 
-            this.Cidade.Location = new System.Drawing.Point(140, 52);
-            this.Cidade.Name = "Cidade";
-            this.Cidade.Size = new System.Drawing.Size(258, 22);
-            this.Cidade.TabIndex = 6;
+            this.tbCidade.Location = new System.Drawing.Point(140, 52);
+            this.tbCidade.Name = "tbCidade";
+            this.tbCidade.Size = new System.Drawing.Size(258, 22);
+            this.tbCidade.TabIndex = 6;
             // 
             // label3
             // 
@@ -174,10 +174,10 @@
             this.groupBox1.Controls.Add(this.tbMorada);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.Pais);
+            this.groupBox1.Controls.Add(this.tbPais);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.Cidade);
+            this.groupBox1.Controls.Add(this.tbCidade);
             this.groupBox1.Location = new System.Drawing.Point(14, 296);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(404, 152);
@@ -356,6 +356,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(899, 614);
             this.Name = "FormClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RestGest - Clientes";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -375,8 +376,8 @@
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Pais;
-        private System.Windows.Forms.TextBox Cidade;
+        private System.Windows.Forms.TextBox tbPais;
+        private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbMorada;
