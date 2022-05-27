@@ -12,10 +12,12 @@ namespace Projeto
 {
     public partial class FormGestaoRestaurante : Form
     {
+        RestGestModelContainer restGest;
         public FormGestaoRestaurante()
         {
             InitializeComponent();
             this.ControlBox = false;
+            restGest = new RestGestModelContainer();
         }
 
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)

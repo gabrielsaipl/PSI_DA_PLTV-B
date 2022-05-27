@@ -52,7 +52,7 @@
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbRestaurantes = new System.Windows.Forms.ListBox();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
             this.btFiltrar = new System.Windows.Forms.Button();
             this.btPedidos = new System.Windows.Forms.Button();
@@ -291,14 +291,14 @@
             this.btNovo.UseVisualStyleBackColor = false;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
-            // listBox1
+            // lbRestaurantes
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(390, 97);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(410, 324);
-            this.listBox1.TabIndex = 17;
+            this.lbRestaurantes.FormattingEnabled = true;
+            this.lbRestaurantes.ItemHeight = 16;
+            this.lbRestaurantes.Location = new System.Drawing.Point(390, 97);
+            this.lbRestaurantes.Name = "lbRestaurantes";
+            this.lbRestaurantes.Size = new System.Drawing.Size(410, 324);
+            this.lbRestaurantes.TabIndex = 17;
             // 
             // tbFiltrar
             // 
@@ -360,7 +360,7 @@
             this.Controls.Add(this.btPedidos);
             this.Controls.Add(this.btFiltrar);
             this.Controls.Add(this.tbFiltrar);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbRestaurantes);
             this.Controls.Add(this.btNovo);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.groupBox2);
@@ -410,7 +410,7 @@
         private System.Windows.Forms.TextBox tbPosicao;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btNovo;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbRestaurantes;
         private System.Windows.Forms.TextBox tbFiltrar;
         private System.Windows.Forms.Button btFiltrar;
         private System.Windows.Forms.Button btPedidos;

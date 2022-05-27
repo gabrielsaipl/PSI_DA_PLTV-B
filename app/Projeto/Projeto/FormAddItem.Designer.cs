@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddItem));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +40,10 @@
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.btAdicionar = new System.Windows.Forms.Button();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@
             // 
             // btAlterarImagem
             // 
-            this.btAlterarImagem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAlterarImagem.BackgroundImage")));
+            this.btAlterarImagem.BackgroundImage = global::Projeto.Properties.Resources.addImage;
             this.btAlterarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btAlterarImagem.Location = new System.Drawing.Point(427, 109);
             this.btAlterarImagem.Name = "btAlterarImagem";
@@ -148,11 +149,32 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(21, 193);
+            this.label2.Location = new System.Drawing.Point(41, 193);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 42;
-            this.label2.Text = "Categoria:";
+            this.label2.Text = "Estado:";
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.cbEstado.Location = new System.Drawing.Point(118, 193);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(165, 24);
+            this.cbEstado.TabIndex = 41;
+            // 
+            // btAdicionar
+            // 
+            this.btAdicionar.BackColor = System.Drawing.SystemColors.Window;
+            this.btAdicionar.Location = new System.Drawing.Point(71, 284);
+            this.btAdicionar.Name = "btAdicionar";
+            this.btAdicionar.Size = new System.Drawing.Size(334, 41);
+            this.btAdicionar.TabIndex = 43;
+            this.btAdicionar.Text = "Adicionar";
+            this.btAdicionar.UseVisualStyleBackColor = false;
             // 
             // cbCategoria
             // 
@@ -160,29 +182,31 @@
             this.cbCategoria.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.cbCategoria.Location = new System.Drawing.Point(118, 193);
+            this.cbCategoria.Location = new System.Drawing.Point(118, 223);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(165, 24);
-            this.cbCategoria.TabIndex = 41;
+            this.cbCategoria.TabIndex = 44;
             // 
-            // btAdicionar
+            // label3
             // 
-            this.btAdicionar.BackColor = System.Drawing.SystemColors.Window;
-            this.btAdicionar.Location = new System.Drawing.Point(75, 241);
-            this.btAdicionar.Name = "btAdicionar";
-            this.btAdicionar.Size = new System.Drawing.Size(334, 41);
-            this.btAdicionar.TabIndex = 43;
-            this.btAdicionar.Text = "Adicionar";
-            this.btAdicionar.UseVisualStyleBackColor = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(21, 223);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Categoria:";
             // 
             // FormAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(505, 308);
-            this.Controls.Add(this.btAdicionar);
+            this.ClientSize = new System.Drawing.Size(505, 337);
             this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btAdicionar);
+            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.btAlterarImagem);
             this.Controls.Add(this.tbIngredientes);
             this.Controls.Add(this.tbPreco);
@@ -193,8 +217,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
-            this.MaximumSize = new System.Drawing.Size(523, 355);
-            this.MinimumSize = new System.Drawing.Size(523, 355);
+            this.MaximumSize = new System.Drawing.Size(523, 384);
+            this.MinimumSize = new System.Drawing.Size(523, 384);
             this.Name = "FormAddItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Adicionar Item";
@@ -219,7 +243,9 @@
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Button btAdicionar;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -48,7 +48,7 @@ namespace Projeto
         /// </summary>
         private void listarCategorias()
         {
-            lbCategorias.DataSource = restGest.Categoria.ToList();
+            lbCategorias.DataSource = restGest.Categoria.ToList<Categoria>();
         }
 
         private void btGravar_Click(object sender, EventArgs e)

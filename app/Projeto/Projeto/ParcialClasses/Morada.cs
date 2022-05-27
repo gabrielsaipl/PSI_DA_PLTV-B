@@ -8,6 +8,7 @@ namespace Projeto
 {
     public partial class Morada
     {
+        public Morada() { }
         public Morada(string pais, string cidade, string codPostal, string rua)
         {
             this.Pais = pais;
@@ -18,7 +19,7 @@ namespace Projeto
 
         public override string ToString()
         {
-            return $"({IdMorada}){Pais} - {Cidade} - {CodPostal} - {Rua}";
+            return $"{Pais} - {Cidade} - {CodPostal} - {Rua}";
         }
     }
 }

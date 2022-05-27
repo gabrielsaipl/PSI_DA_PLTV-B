@@ -44,7 +44,7 @@ namespace Projeto
             Cliente novoCliente = new Cliente(nome, telemovel, nif);    // CRIAR O CLIENTE
             novoCliente.Morada = novaMorada;
 
-            restGest.Pessoa.Add(novoCliente);       // ADICIONAR O CLIENTE E MORADA À BASE DE DADOS
+            restGest.Pessoa.Add(novoCliente);
 
             restGest.SaveChanges();         // GRAVAR ATUALIZAÇÕES
         }

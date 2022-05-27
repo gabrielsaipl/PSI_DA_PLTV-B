@@ -32,25 +32,24 @@ namespace Projeto
 
         private void btAdicionar_Click(object sender, EventArgs e)
         {
+            
             string pais = tbPais.Text;
             string cidade = tbCidade.Text;
             string codPostal = tbCodPostal.Text;
             string rua = tbRua.Text;
-            Morada novaMorada = new Morada(pais, cidade, codPostal, rua);  // CRIAR A MORADA DO RESTAURANTE
-           // restGest.Morada.Add(novaMorada);                               // ENVIA MORADA PARA A BASE DE DADOS
-           // restGest.SaveChanges();
-
             string nomeRestaurante = tbNome.Text;
-            Restaurante novoRestaurante = new Restaurante(nomeRestaurante); //CRIAR O RESTAURANTE
-            novoRestaurante.Morada = novaMorada;
-            
-            restGest.Restaurante.Add(novoRestaurante);
 
+            if (pais != "" && cidade != "" && codPostal != "" && rua != "" && nomeRestaurante != "")
+            {
+                Morada novaMorada = new Morada(pais, cidade, codPostal, rua);  // CRIAR A MORADA DO RESTAURANTE 
+                Restaurante novoRestaurante = new Restaurante(nomeRestaurante); //CRIAR O RESTAURANTE
+                novoRestaurante.Morada = novaMorada;            // ATRIBUIÇÃO DA MORADA AO RESTAURANTE
+                restGest.Restaurante.Add(novoRestaurante);
 
-            //novaMorada.Restaurante = novoRestaurante;
-
-            restGest.SaveChanges();
-
+                restGest.SaveChanges();     //      GUARDAR NA BASE DE DADOS
+                this.Close();
+            }
+            else MessageBox.Show("Insira todos os dados.");
         }
     }
 }

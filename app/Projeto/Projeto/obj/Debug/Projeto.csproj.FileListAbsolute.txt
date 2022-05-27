@@ -27,3 +27,4 @@ C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormAddItem.resources
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPagamentos.resources
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPedidos.resources
+C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\Resources\addImage.png

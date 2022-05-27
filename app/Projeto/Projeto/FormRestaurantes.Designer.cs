@@ -31,16 +31,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbRestaurante = new System.Windows.Forms.ListBox();
+            this.lbRestaurantes = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbCodPostal = new System.Windows.Forms.MaskedTextBox();
             this.tbRua = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Pais = new System.Windows.Forms.TextBox();
+            this.tbPais = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Cidade = new System.Windows.Forms.TextBox();
+            this.tbCidade = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.btGerir = new System.Windows.Forms.Button();
             this.btCategorias = new System.Windows.Forms.Button();
             this.btMetodosPagamento = new System.Windows.Forms.Button();
+            this.btUpdate = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.voltarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1082, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(998, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,14 +81,15 @@
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
-            // lbRestaurante
+            // lbRestaurantes
             // 
-            this.lbRestaurante.FormattingEnabled = true;
-            this.lbRestaurante.ItemHeight = 16;
-            this.lbRestaurante.Location = new System.Drawing.Point(422, 112);
-            this.lbRestaurante.Name = "lbRestaurante";
-            this.lbRestaurante.Size = new System.Drawing.Size(526, 340);
-            this.lbRestaurante.TabIndex = 1;
+            this.lbRestaurantes.FormattingEnabled = true;
+            this.lbRestaurantes.ItemHeight = 16;
+            this.lbRestaurantes.Location = new System.Drawing.Point(422, 112);
+            this.lbRestaurantes.Name = "lbRestaurantes";
+            this.lbRestaurantes.Size = new System.Drawing.Size(455, 340);
+            this.lbRestaurantes.TabIndex = 1;
+            this.lbRestaurantes.SelectedIndexChanged += new System.EventHandler(this.lbRestaurantes_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -95,10 +97,10 @@
             this.groupBox1.Controls.Add(this.tbRua);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.Pais);
+            this.groupBox1.Controls.Add(this.tbPais);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.Cidade);
+            this.groupBox1.Controls.Add(this.tbCidade);
             this.groupBox1.Location = new System.Drawing.Point(13, 187);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(404, 152);
@@ -141,12 +143,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "País :";
             // 
-            // Pais
+            // tbPais
             // 
-            this.Pais.Location = new System.Drawing.Point(140, 24);
-            this.Pais.Name = "Pais";
-            this.Pais.Size = new System.Drawing.Size(258, 22);
-            this.Pais.TabIndex = 4;
+            this.tbPais.Location = new System.Drawing.Point(140, 24);
+            this.tbPais.Name = "tbPais";
+            this.tbPais.Size = new System.Drawing.Size(258, 22);
+            this.tbPais.TabIndex = 4;
             // 
             // label4
             // 
@@ -168,12 +170,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Cidade :";
             // 
-            // Cidade
+            // tbCidade
             // 
-            this.Cidade.Location = new System.Drawing.Point(140, 52);
-            this.Cidade.Name = "Cidade";
-            this.Cidade.Size = new System.Drawing.Size(258, 22);
-            this.Cidade.TabIndex = 6;
+            this.tbCidade.Location = new System.Drawing.Point(140, 52);
+            this.tbCidade.Name = "tbCidade";
+            this.tbCidade.Size = new System.Drawing.Size(258, 22);
+            this.tbCidade.TabIndex = 6;
             // 
             // btSave
             // 
@@ -184,6 +186,7 @@
             this.btSave.TabIndex = 14;
             this.btSave.Text = "Guardar Alterações";
             this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // label1
             // 
@@ -226,7 +229,7 @@
             // btGerir
             // 
             this.btGerir.BackColor = System.Drawing.SystemColors.Window;
-            this.btGerir.Location = new System.Drawing.Point(954, 112);
+            this.btGerir.Location = new System.Drawing.Point(883, 236);
             this.btGerir.Name = "btGerir";
             this.btGerir.Size = new System.Drawing.Size(100, 68);
             this.btGerir.TabIndex = 18;
@@ -237,7 +240,7 @@
             // btCategorias
             // 
             this.btCategorias.BackColor = System.Drawing.SystemColors.Window;
-            this.btCategorias.Location = new System.Drawing.Point(954, 310);
+            this.btCategorias.Location = new System.Drawing.Point(883, 310);
             this.btCategorias.Name = "btCategorias";
             this.btCategorias.Size = new System.Drawing.Size(100, 68);
             this.btCategorias.TabIndex = 19;
@@ -247,19 +250,34 @@
             // btMetodosPagamento
             // 
             this.btMetodosPagamento.BackColor = System.Drawing.SystemColors.Window;
-            this.btMetodosPagamento.Location = new System.Drawing.Point(954, 384);
+            this.btMetodosPagamento.Location = new System.Drawing.Point(883, 384);
             this.btMetodosPagamento.Name = "btMetodosPagamento";
             this.btMetodosPagamento.Size = new System.Drawing.Size(100, 68);
             this.btMetodosPagamento.TabIndex = 20;
             this.btMetodosPagamento.Text = "Métodos de Pagamento";
             this.btMetodosPagamento.UseVisualStyleBackColor = false;
             // 
+            // btUpdate
+            // 
+            this.btUpdate.BackgroundImage = global::Projeto.Properties.Resources.update;
+            this.btUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btUpdate.FlatAppearance.BorderSize = 0;
+            this.btUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btUpdate.Location = new System.Drawing.Point(934, 39);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(52, 41);
+            this.btUpdate.TabIndex = 21;
+            this.btUpdate.UseVisualStyleBackColor = false;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
             // FormRestaurantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1082, 483);
+            this.ClientSize = new System.Drawing.Size(998, 483);
+            this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.btMetodosPagamento);
             this.Controls.Add(this.btCategorias);
             this.Controls.Add(this.btGerir);
@@ -269,11 +287,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbRestaurante);
+            this.Controls.Add(this.lbRestaurantes);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(1100, 530);
-            this.MinimumSize = new System.Drawing.Size(1100, 530);
+            this.MaximumSize = new System.Drawing.Size(1016, 530);
+            this.MinimumSize = new System.Drawing.Size(1016, 530);
             this.Name = "FormRestaurantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Restaurantes";
@@ -291,16 +309,16 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
-        private System.Windows.Forms.ListBox lbRestaurante;
+        private System.Windows.Forms.ListBox lbRestaurantes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox tbCodPostal;
         private System.Windows.Forms.TextBox tbRua;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Pais;
+        private System.Windows.Forms.TextBox tbPais;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Cidade;
+        private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
@@ -309,5 +327,6 @@
         private System.Windows.Forms.Button btGerir;
         private System.Windows.Forms.Button btCategorias;
         private System.Windows.Forms.Button btMetodosPagamento;
+        private System.Windows.Forms.Button btUpdate;
     }
 }

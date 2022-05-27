@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormItensCadeia));
             this.label1 = new System.Windows.Forms.Label();
             this.tbPreco = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,6 +46,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@
             // 
             // btAlterarImagem
             // 
-            this.btAlterarImagem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAlterarImagem.BackgroundImage")));
+            this.btAlterarImagem.BackgroundImage = global::Projeto.Properties.Resources.addImage;
             this.btAlterarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btAlterarImagem.Location = new System.Drawing.Point(529, 99);
             this.btAlterarImagem.Name = "btAlterarImagem";
@@ -216,12 +217,34 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(268, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Categoria:";
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.cbCategoria.Location = new System.Drawing.Point(360, 155);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(113, 24);
+            this.cbCategoria.TabIndex = 44;
+            // 
             // FormItensCadeia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(766, 541);
+            this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btNovo);
             this.Controls.Add(this.listView1);
@@ -238,6 +261,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label3);
             this.MaximumSize = new System.Drawing.Size(784, 588);
             this.MinimumSize = new System.Drawing.Size(784, 588);
             this.Name = "FormItensCadeia";
@@ -270,5 +294,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbCategoria;
     }
 }
