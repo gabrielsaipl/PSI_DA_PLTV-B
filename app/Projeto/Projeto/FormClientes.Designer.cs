@@ -52,10 +52,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btSave = new System.Windows.Forms.Button();
-            this.btEliminar = new System.Windows.Forms.Button();
             this.btNovoCliente = new System.Windows.Forms.Button();
             this.btFiltrar = new System.Windows.Forms.Button();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
+            this.btUpdate = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,6 +69,7 @@
             this.lbClientes.Name = "lbClientes";
             this.lbClientes.Size = new System.Drawing.Size(446, 388);
             this.lbClientes.TabIndex = 0;
+            this.lbClientes.SelectedIndexChanged += new System.EventHandler(this.lbClientes_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -292,19 +293,7 @@
             this.btSave.TabIndex = 13;
             this.btSave.Text = "Guardar Alterações";
             this.btSave.UseVisualStyleBackColor = false;
-            // 
-            // btEliminar
-            // 
-            this.btEliminar.BackColor = System.Drawing.SystemColors.Window;
-            this.btEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.ForeColor = System.Drawing.Color.Red;
-            this.btEliminar.Location = new System.Drawing.Point(15, 459);
-            this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(403, 41);
-            this.btEliminar.TabIndex = 14;
-            this.btEliminar.Text = "Eliminar cliente selecionado";
-            this.btEliminar.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btNovoCliente
             // 
@@ -334,16 +323,30 @@
             this.tbFiltrar.Size = new System.Drawing.Size(258, 22);
             this.tbFiltrar.TabIndex = 13;
             // 
+            // btUpdate
+            // 
+            this.btUpdate.BackgroundImage = global::Projeto.Properties.Resources.update;
+            this.btUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btUpdate.FlatAppearance.BorderSize = 0;
+            this.btUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btUpdate.Location = new System.Drawing.Point(817, 50);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(52, 41);
+            this.btUpdate.TabIndex = 22;
+            this.btUpdate.UseVisualStyleBackColor = false;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(881, 567);
+            this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.tbFiltrar);
             this.Controls.Add(this.btFiltrar);
             this.Controls.Add(this.btNovoCliente);
-            this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -393,11 +396,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox tbTelemovel;
         private System.Windows.Forms.Button btSave;
-        private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btNovoCliente;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.Button btFiltrar;
         private System.Windows.Forms.TextBox tbFiltrar;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btUpdate;
     }
 }

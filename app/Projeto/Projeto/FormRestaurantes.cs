@@ -47,7 +47,7 @@ namespace Projeto
         /// <summary>
         /// Atualizar listbox dos restaurantes
         /// </summary>
-        public void listarRestaurantes()
+        private void listarRestaurantes()
         {
             if (restGest.Restaurante.Count() > 0)
             {
@@ -93,6 +93,8 @@ namespace Projeto
                     restauranteSelecionado.Morada.Cidade = cidade;
                     restauranteSelecionado.Morada.Rua = rua;
                     restauranteSelecionado.Morada.CodPostal = codPostal;
+                    restGest.SaveChanges();
+                    listarRestaurantes();
                 }
             }
         }
