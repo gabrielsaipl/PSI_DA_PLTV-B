@@ -34,7 +34,7 @@
             this.lbRestaurante = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbCodPostal = new System.Windows.Forms.MaskedTextBox();
-            this.tbMorada = new System.Windows.Forms.TextBox();
+            this.tbRua = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Pais = new System.Windows.Forms.TextBox();
@@ -92,7 +92,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbCodPostal);
-            this.groupBox1.Controls.Add(this.tbMorada);
+            this.groupBox1.Controls.Add(this.tbRua);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.Pais);
@@ -114,22 +114,22 @@
             this.tbCodPostal.Size = new System.Drawing.Size(78, 22);
             this.tbCodPostal.TabIndex = 11;
             // 
-            // tbMorada
+            // tbRua
             // 
-            this.tbMorada.Location = new System.Drawing.Point(140, 80);
-            this.tbMorada.Name = "tbMorada";
-            this.tbMorada.Size = new System.Drawing.Size(258, 22);
-            this.tbMorada.TabIndex = 10;
+            this.tbRua.Location = new System.Drawing.Point(140, 80);
+            this.tbRua.Name = "tbRua";
+            this.tbRua.Size = new System.Drawing.Size(258, 22);
+            this.tbRua.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(55, 80);
+            this.label5.Location = new System.Drawing.Point(78, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Morada :";
+            this.label5.Text = "Rua :";
             // 
             // label2
             // 
@@ -294,7 +294,7 @@
         private System.Windows.Forms.ListBox lbRestaurante;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox tbCodPostal;
-        private System.Windows.Forms.TextBox tbMorada;
+        private System.Windows.Forms.TextBox tbRua;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Pais;

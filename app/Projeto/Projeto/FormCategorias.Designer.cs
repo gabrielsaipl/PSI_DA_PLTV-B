@@ -52,14 +52,14 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(439, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(439, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -67,7 +67,7 @@
             // 
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -79,6 +79,7 @@
             this.lbCategorias.Name = "lbCategorias";
             this.lbCategorias.Size = new System.Drawing.Size(361, 228);
             this.lbCategorias.TabIndex = 1;
+            this.lbCategorias.SelectedIndexChanged += new System.EventHandler(this.lbCategorias_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -102,6 +103,7 @@
             // 
             // cbEstado
             // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Items.AddRange(new object[] {
             "Ativo",
@@ -137,6 +139,7 @@
             this.btGravar.TabIndex = 25;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = false;
+            this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
             // btNovo
             // 
@@ -147,6 +150,7 @@
             this.btNovo.TabIndex = 28;
             this.btNovo.Text = "Adicionar";
             this.btNovo.UseVisualStyleBackColor = false;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
             // tbNova
             // 

@@ -38,8 +38,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbCodPostal = new System.Windows.Forms.MaskedTextBox();
+            this.tbRua = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPais = new System.Windows.Forms.TextBox();
@@ -63,6 +63,7 @@
             this.btAdicionar.TabIndex = 21;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = false;
+            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
             // label1
             // 
@@ -144,8 +145,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.tbCodPostal);
+            this.groupBox1.Controls.Add(this.tbRua);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbPais);
@@ -159,30 +160,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Morada";
             // 
-            // maskedTextBox1
+            // tbCodPostal
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(140, 80);
-            this.maskedTextBox1.Mask = "0000-000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(78, 22);
-            this.maskedTextBox1.TabIndex = 11;
+            this.tbCodPostal.Location = new System.Drawing.Point(140, 80);
+            this.tbCodPostal.Mask = "0000-000";
+            this.tbCodPostal.Name = "tbCodPostal";
+            this.tbCodPostal.Size = new System.Drawing.Size(78, 22);
+            this.tbCodPostal.TabIndex = 11;
             // 
-            // textBox4
+            // tbRua
             // 
-            this.textBox4.Location = new System.Drawing.Point(140, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 22);
-            this.textBox4.TabIndex = 10;
+            this.tbRua.Location = new System.Drawing.Point(140, 108);
+            this.tbRua.Name = "tbRua";
+            this.tbRua.Size = new System.Drawing.Size(258, 22);
+            this.tbRua.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(55, 108);
+            this.label5.Location = new System.Drawing.Point(80, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Morada :";
+            this.label5.Text = "Rua :";
             // 
             // label2
             // 
@@ -296,8 +297,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.MaskedTextBox tbCodPostal;
+        private System.Windows.Forms.TextBox tbRua;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPais;

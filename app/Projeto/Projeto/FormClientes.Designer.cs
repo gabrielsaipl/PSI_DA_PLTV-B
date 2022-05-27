@@ -38,7 +38,7 @@
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbMorada = new System.Windows.Forms.TextBox();
+            this.tbRua = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbCodPostal = new System.Windows.Forms.MaskedTextBox();
@@ -78,14 +78,14 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(881, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             // 
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -151,27 +151,27 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Código Postal :";
             // 
-            // tbMorada
+            // tbRua
             // 
-            this.tbMorada.Location = new System.Drawing.Point(140, 80);
-            this.tbMorada.Name = "tbMorada";
-            this.tbMorada.Size = new System.Drawing.Size(258, 22);
-            this.tbMorada.TabIndex = 10;
+            this.tbRua.Location = new System.Drawing.Point(140, 80);
+            this.tbRua.Name = "tbRua";
+            this.tbRua.Size = new System.Drawing.Size(258, 22);
+            this.tbRua.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(55, 80);
+            this.label5.Location = new System.Drawing.Point(80, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Morada :";
+            this.label5.Text = "Rua :";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbCodPostal);
-            this.groupBox1.Controls.Add(this.tbMorada);
+            this.groupBox1.Controls.Add(this.tbRua);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbPais);
@@ -380,7 +380,7 @@
         private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbMorada;
+        private System.Windows.Forms.TextBox tbRua;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox tbCodPostal;
