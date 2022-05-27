@@ -28,3 +28,32 @@ C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPagamentos.resources
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPedidos.resources
 C:\Users\rafae\OneDrive\Ambiente de Trabalho\TESP\2º semestre\DA\Projeto\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\Resources\addImage.png
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.csproj.AssemblyReference.cache
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormAddCliente.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormAddItem.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormAddRestaurante.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormAddTrabalhador.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormCategorias.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormClientes.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormGestaoRestaurante.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormItensCadeia.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormMenuRestaurante.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormMetodosPagamento.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPagamentos.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPedidos.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormPrincipal.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.FormRestaurantes.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.Properties.Resources.resources
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.csproj.GenerateResource.cache
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.csproj.CoreCompileInputs.cache
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.exe
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.pdb
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\Resources\addImage.png
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\Projeto.exe.config
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\Projeto.exe
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\Projeto.pdb
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\EntityFramework.dll
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\EntityFramework.xml
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\2211892\PSI_DA_PLTV-B\app\Projeto\Projeto\obj\Debug\Projeto.csproj.CopyComplete

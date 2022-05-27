@@ -162,6 +162,7 @@
     </Compile>
     <Compile Include="ParcialClasses\Categorias.cs" />
     <Compile Include="ParcialClasses\Cliente.cs" />
+    <Compile Include="ParcialClasses\MetodoPagamento.cs" />
     <Compile Include="ParcialClasses\Morada.cs" />
     <Compile Include="ParcialClasses\Restaurante.cs" />
     <Compile Include="Pedido.cs">
