@@ -34,10 +34,7 @@ namespace Projeto
         
         private void listarMetodoPagamento()
         {
-            if (lbMetodosPagamento.SelectedIndex >= 0)
-            {
-                lbMetodosPagamento.DataSource = restGest.MetodoPagamento.ToList<MetodoPagamento>();
-            }
+            lbMetodosPagamento.DataSource = restGest.MetodoPagamento.ToList<MetodoPagamento>();
         }
 
         private void btNovo_Click(object sender, EventArgs e) 
@@ -66,7 +63,7 @@ namespace Projeto
         private void btGravar_Click(object sender, EventArgs e)
         
         {
-            if (tbNovo.Text != "")
+            if (tbNome.Text != "")
             {
                 MetodoPagamento metodopagamentoSelecionado = lbMetodosPagamento.SelectedItem as MetodoPagamento;
                 metodopagamentoSelecionado.MetodoPagament = tbNome.Text;

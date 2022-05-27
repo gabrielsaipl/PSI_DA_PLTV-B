@@ -48,10 +48,7 @@ namespace Projeto
         /// </summary>
         private void listarCategorias()
         {
-            if (lbCategorias.SelectedIndex >= 0)
-            {
-                lbCategorias.DataSource = restGest.Categoria.ToList<Categoria>();
-            }
+            lbCategorias.DataSource = restGest.Categoria.ToList<Categoria>();
         }
 
         private void btGravar_Click(object sender, EventArgs e)
