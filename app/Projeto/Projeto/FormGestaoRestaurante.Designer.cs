@@ -52,12 +52,13 @@
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
-            this.lbRestaurantes = new System.Windows.Forms.ListBox();
+            this.lbTrabalhadores = new System.Windows.Forms.ListBox();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
-            this.btFiltrar = new System.Windows.Forms.Button();
             this.btPedidos = new System.Windows.Forms.Button();
             this.btMenus = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btUpdate = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,11 +93,13 @@
             // 
             // cbRestaurante
             // 
+            this.cbRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRestaurante.FormattingEnabled = true;
-            this.cbRestaurante.Location = new System.Drawing.Point(12, 44);
+            this.cbRestaurante.Location = new System.Drawing.Point(12, 58);
             this.cbRestaurante.Name = "cbRestaurante";
-            this.cbRestaurante.Size = new System.Drawing.Size(324, 24);
+            this.cbRestaurante.Size = new System.Drawing.Size(381, 24);
             this.cbRestaurante.TabIndex = 2;
+            this.cbRestaurante.SelectedIndexChanged += new System.EventHandler(this.cbRestaurante_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -194,7 +197,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbCidade);
-            this.groupBox1.Location = new System.Drawing.Point(12, 281);
+            this.groupBox1.Location = new System.Drawing.Point(12, 262);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(372, 141);
             this.groupBox1.TabIndex = 13;
@@ -279,43 +282,36 @@
             this.btSave.TabIndex = 15;
             this.btSave.Text = "Guardar Alterações";
             this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btNovo
             // 
             this.btNovo.BackColor = System.Drawing.SystemColors.Window;
-            this.btNovo.Location = new System.Drawing.Point(12, 428);
+            this.btNovo.Location = new System.Drawing.Point(6, 444);
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(372, 41);
             this.btNovo.TabIndex = 16;
-            this.btNovo.Text = "Novo trabalhador";
+            this.btNovo.Text = "Criar novo trabalhador";
             this.btNovo.UseVisualStyleBackColor = false;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
-            // lbRestaurantes
+            // lbTrabalhadores
             // 
-            this.lbRestaurantes.FormattingEnabled = true;
-            this.lbRestaurantes.ItemHeight = 16;
-            this.lbRestaurantes.Location = new System.Drawing.Point(390, 97);
-            this.lbRestaurantes.Name = "lbRestaurantes";
-            this.lbRestaurantes.Size = new System.Drawing.Size(410, 324);
-            this.lbRestaurantes.TabIndex = 17;
+            this.lbTrabalhadores.FormattingEnabled = true;
+            this.lbTrabalhadores.ItemHeight = 16;
+            this.lbTrabalhadores.Location = new System.Drawing.Point(390, 97);
+            this.lbTrabalhadores.Name = "lbTrabalhadores";
+            this.lbTrabalhadores.Size = new System.Drawing.Size(410, 324);
+            this.lbTrabalhadores.TabIndex = 17;
+            this.lbTrabalhadores.SelectedIndexChanged += new System.EventHandler(this.lbTrabalhadores_SelectedIndexChanged);
             // 
             // tbFiltrar
             // 
-            this.tbFiltrar.Location = new System.Drawing.Point(390, 434);
+            this.tbFiltrar.Location = new System.Drawing.Point(454, 427);
             this.tbFiltrar.Name = "tbFiltrar";
-            this.tbFiltrar.Size = new System.Drawing.Size(261, 22);
+            this.tbFiltrar.Size = new System.Drawing.Size(346, 22);
             this.tbFiltrar.TabIndex = 15;
-            // 
-            // btFiltrar
-            // 
-            this.btFiltrar.BackColor = System.Drawing.SystemColors.Window;
-            this.btFiltrar.Location = new System.Drawing.Point(657, 432);
-            this.btFiltrar.Name = "btFiltrar";
-            this.btFiltrar.Size = new System.Drawing.Size(143, 27);
-            this.btFiltrar.TabIndex = 18;
-            this.btFiltrar.Text = "Filtrar";
-            this.btFiltrar.UseVisualStyleBackColor = false;
+            this.tbFiltrar.TextChanged += new System.EventHandler(this.tbFiltrar_TextChanged);
             // 
             // btPedidos
             // 
@@ -343,11 +339,35 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(427, 44);
+            this.label1.Location = new System.Drawing.Point(427, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(294, 38);
             this.label1.TabIndex = 47;
             this.label1.Text = "Gerir Restaurante";
+            // 
+            // btUpdate
+            // 
+            this.btUpdate.BackgroundImage = global::Projeto.Properties.Resources.update;
+            this.btUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btUpdate.FlatAppearance.BorderSize = 0;
+            this.btUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btUpdate.Location = new System.Drawing.Point(748, 49);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(52, 41);
+            this.btUpdate.TabIndex = 48;
+            this.btUpdate.UseVisualStyleBackColor = false;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(395, 429);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 20);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Filtrar";
             // 
             // FormGestaoRestaurante
             // 
@@ -355,16 +375,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(830, 570);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btMenus);
             this.Controls.Add(this.btPedidos);
-            this.Controls.Add(this.btFiltrar);
             this.Controls.Add(this.tbFiltrar);
-            this.Controls.Add(this.lbRestaurantes);
+            this.Controls.Add(this.lbTrabalhadores);
             this.Controls.Add(this.btNovo);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbRestaurante);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -410,11 +431,12 @@
         private System.Windows.Forms.TextBox tbPosicao;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btNovo;
-        private System.Windows.Forms.ListBox lbRestaurantes;
+        private System.Windows.Forms.ListBox lbTrabalhadores;
         private System.Windows.Forms.TextBox tbFiltrar;
-        private System.Windows.Forms.Button btFiltrar;
         private System.Windows.Forms.Button btPedidos;
         private System.Windows.Forms.Button btMenus;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btUpdate;
+        private System.Windows.Forms.Label label10;
     }
 }

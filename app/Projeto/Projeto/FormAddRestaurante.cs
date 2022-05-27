@@ -32,7 +32,6 @@ namespace Projeto
 
         private void btAdicionar_Click(object sender, EventArgs e)
         {
-            
             string pais = tbPais.Text;
             string cidade = tbCidade.Text;
             string codPostal = tbCodPostal.Text;

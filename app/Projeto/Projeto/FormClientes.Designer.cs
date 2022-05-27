@@ -53,9 +53,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btSave = new System.Windows.Forms.Button();
             this.btNovoCliente = new System.Windows.Forms.Button();
-            this.btFiltrar = new System.Windows.Forms.Button();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
             this.btUpdate = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,7 +79,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(881, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -306,22 +306,13 @@
             this.btNovoCliente.UseVisualStyleBackColor = false;
             this.btNovoCliente.Click += new System.EventHandler(this.btNovoCliente_Click);
             // 
-            // btFiltrar
-            // 
-            this.btFiltrar.BackColor = System.Drawing.SystemColors.Window;
-            this.btFiltrar.Location = new System.Drawing.Point(687, 510);
-            this.btFiltrar.Name = "btFiltrar";
-            this.btFiltrar.Size = new System.Drawing.Size(182, 32);
-            this.btFiltrar.TabIndex = 16;
-            this.btFiltrar.Text = "Filtrar";
-            this.btFiltrar.UseVisualStyleBackColor = false;
-            // 
             // tbFiltrar
             // 
-            this.tbFiltrar.Location = new System.Drawing.Point(423, 515);
+            this.tbFiltrar.Location = new System.Drawing.Point(496, 506);
             this.tbFiltrar.Name = "tbFiltrar";
-            this.tbFiltrar.Size = new System.Drawing.Size(258, 22);
+            this.tbFiltrar.Size = new System.Drawing.Size(373, 22);
             this.tbFiltrar.TabIndex = 13;
+            this.tbFiltrar.TextChanged += new System.EventHandler(this.tbFiltrar_TextChanged);
             // 
             // btUpdate
             // 
@@ -337,6 +328,16 @@
             this.btUpdate.UseVisualStyleBackColor = false;
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(437, 506);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 20);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Filtrar";
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,7 +346,6 @@
             this.ClientSize = new System.Drawing.Size(881, 567);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.tbFiltrar);
-            this.Controls.Add(this.btFiltrar);
             this.Controls.Add(this.btNovoCliente);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.groupBox2);
@@ -353,6 +353,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbClientes);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.label11);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(899, 614);
@@ -398,9 +399,9 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btNovoCliente;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.Button btFiltrar;
         private System.Windows.Forms.TextBox tbFiltrar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btUpdate;
+        private System.Windows.Forms.Label label11;
     }
 }

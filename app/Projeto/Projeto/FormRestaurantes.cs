@@ -13,6 +13,7 @@ namespace Projeto
     public partial class FormRestaurantes : Form
     {
         RestGestModelContainer restGest;
+        public static int restauranteSelecionado;   // VARIAVEL PARA PASSAR O INDICE DO FORMULÁRIO SELECIONADO PARA O OUTRO FORM
         public FormRestaurantes()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace Projeto
 
         private void btGerir_Click(object sender, EventArgs e)
         {
+            restauranteSelecionado = lbRestaurantes.SelectedIndex;
             FormGestaoRestaurante formGestaoRestaurante = new FormGestaoRestaurante();
             formGestaoRestaurante.ShowDialog();
         }

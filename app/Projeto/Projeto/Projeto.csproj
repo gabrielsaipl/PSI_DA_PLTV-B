@@ -165,6 +165,7 @@
     <Compile Include="ParcialClasses\MetodoPagamento.cs" />
     <Compile Include="ParcialClasses\Morada.cs" />
     <Compile Include="ParcialClasses\Restaurante.cs" />
+    <Compile Include="ParcialClasses\Trabalhador.cs" />
     <Compile Include="Pedido.cs">
       <DependentUpon>RestGestModel.tt</DependentUpon>
     </Compile>
@@ -288,7 +289,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ImagensItens\" />
     <Folder Include="Resources\ImagensItens\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

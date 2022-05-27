@@ -51,6 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbCidade = new System.Windows.Forms.TextBox();
+            this.cbRestaurante = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,18 +87,19 @@
             // btAdicionar
             // 
             this.btAdicionar.BackColor = System.Drawing.SystemColors.Window;
-            this.btAdicionar.Location = new System.Drawing.Point(23, 387);
+            this.btAdicionar.Location = new System.Drawing.Point(23, 413);
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(405, 41);
             this.btAdicionar.TabIndex = 25;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = false;
+            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 58);
+            this.label1.Location = new System.Drawing.Point(80, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(294, 38);
             this.label1.TabIndex = 24;
@@ -113,7 +115,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tbNome);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(24, 108);
+            this.groupBox2.Location = new System.Drawing.Point(24, 134);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(404, 115);
             this.groupBox2.TabIndex = 23;
@@ -201,7 +203,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbCidade);
-            this.groupBox1.Location = new System.Drawing.Point(24, 229);
+            this.groupBox1.Location = new System.Drawing.Point(24, 255);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(404, 152);
             this.groupBox1.TabIndex = 22;
@@ -277,12 +279,22 @@
             this.tbCidade.Size = new System.Drawing.Size(258, 22);
             this.tbCidade.TabIndex = 6;
             // 
+            // cbRestaurante
+            // 
+            this.cbRestaurante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRestaurante.FormattingEnabled = true;
+            this.cbRestaurante.Location = new System.Drawing.Point(24, 91);
+            this.cbRestaurante.Name = "cbRestaurante";
+            this.cbRestaurante.Size = new System.Drawing.Size(398, 24);
+            this.cbRestaurante.TabIndex = 26;
+            // 
             // FormAddTrabalhador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(461, 475);
+            this.Controls.Add(this.cbRestaurante);
             this.Controls.Add(this.btAdicionar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -330,5 +342,6 @@
         private System.Windows.Forms.TextBox tbPosicao;
         private System.Windows.Forms.TextBox tbSalario;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbRestaurante;
     }
 }
