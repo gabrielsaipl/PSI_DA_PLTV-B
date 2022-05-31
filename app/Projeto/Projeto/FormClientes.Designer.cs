@@ -56,6 +56,7 @@
             this.tbFiltrar = new System.Windows.Forms.TextBox();
             this.btUpdate = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.btApagar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,7 +80,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(881, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -338,12 +339,24 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "Filtrar";
             // 
+            // btApagar
+            // 
+            this.btApagar.BackColor = System.Drawing.SystemColors.Window;
+            this.btApagar.ForeColor = System.Drawing.Color.Red;
+            this.btApagar.Location = new System.Drawing.Point(15, 459);
+            this.btApagar.Name = "btApagar";
+            this.btApagar.Size = new System.Drawing.Size(403, 41);
+            this.btApagar.TabIndex = 24;
+            this.btApagar.Text = "Apagar Cliente";
+            this.btApagar.UseVisualStyleBackColor = false;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(881, 567);
+            this.Controls.Add(this.btApagar);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.tbFiltrar);
             this.Controls.Add(this.btNovoCliente);
@@ -403,5 +416,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btApagar;
     }
 }

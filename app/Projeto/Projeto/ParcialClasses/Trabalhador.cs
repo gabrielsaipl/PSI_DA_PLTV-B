@@ -17,10 +17,19 @@ namespace Projeto
             this.Salario = salario;
             this.Posicao = posicao;
         }
+        
+        /// <summary>
+        /// Escreve se o trabalhador está em serviço ou fora de serviço
+        /// </summary>
+        public string estado()
+        {
+            if (this.Ativo) return "Em serviço";
+            else return "Fora de serviço";
+        }
 
         public override string ToString()
         {
-            return $"{Nome} - {Salario}€ - {Telemovel} - {Posicao}";
+            return $"{Nome} - {Salario}€ - {Telemovel} - {Posicao} - {estado()}";
         }
     }
 }

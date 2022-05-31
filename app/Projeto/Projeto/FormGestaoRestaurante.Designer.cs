@@ -59,6 +59,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btUpdate = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbAtivo = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -103,6 +105,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbAtivo);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.tbPosicao);
             this.groupBox2.Controls.Add(this.tbTelemovel);
             this.groupBox2.Controls.Add(this.tbSalario);
@@ -113,7 +117,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(12, 144);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(372, 131);
+            this.groupBox2.Size = new System.Drawing.Size(372, 147);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Trabalhador";
@@ -197,7 +201,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbCidade);
-            this.groupBox1.Location = new System.Drawing.Point(12, 262);
+            this.groupBox1.Location = new System.Drawing.Point(12, 297);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(372, 141);
             this.groupBox1.TabIndex = 13;
@@ -369,6 +373,29 @@
             this.label10.TabIndex = 12;
             this.label10.Text = "Filtrar";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(-4, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 20);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Em serviço:";
+            // 
+            // cbAtivo
+            // 
+            this.cbAtivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAtivo.FormattingEnabled = true;
+            this.cbAtivo.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.cbAtivo.Location = new System.Drawing.Point(105, 119);
+            this.cbAtivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbAtivo.Name = "cbAtivo";
+            this.cbAtivo.Size = new System.Drawing.Size(113, 24);
+            this.cbAtivo.TabIndex = 20;
+            // 
             // FormGestaoRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -438,5 +465,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cbAtivo;
     }
 }

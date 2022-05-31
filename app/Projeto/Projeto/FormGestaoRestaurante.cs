@@ -99,6 +99,8 @@ namespace Projeto
                 tbCidade.Text = trabalhadorSelecionado.Morada.Cidade;
                 tbRua.Text = trabalhadorSelecionado.Morada.Rua;
                 tbCodPostal.Text = trabalhadorSelecionado.Morada.CodPostal;
+                if (trabalhadorSelecionado.Ativo == true) cbAtivo.Text = "Ativo";
+                else cbAtivo.Text = "Inativo";
             }
             else
             {
@@ -110,6 +112,7 @@ namespace Projeto
                 tbCidade.Text = "";
                 tbRua.Text = "";
                 tbCodPostal.Text = "";
+                cbAtivo.Text = "";
             }
         }
 
@@ -135,6 +138,9 @@ namespace Projeto
                 string cidade = tbCidade.Text;
                 string rua = tbRua.Text;
                 string codPostal = tbCodPostal.Text;
+                bool ativo;
+                if (cbAtivo.Text == "Ativo") ativo = true;
+                else ativo = false;
                 if (nome != "" && salario.ToString() != "" && posicao != "" && telemovel != "" && pais != "" && cidade != "" && rua != "" && codPostal != "")
                 {
                     Trabalhador trabalhadorSelecionado = lbTrabalhadores.SelectedItem as Trabalhador;
@@ -146,8 +152,10 @@ namespace Projeto
                     trabalhadorSelecionado.Morada.Cidade = cidade;
                     trabalhadorSelecionado.Morada.Rua = rua;
                     trabalhadorSelecionado.Morada.Pais = pais;
+                    trabalhadorSelecionado.Ativo = ativo;
                     restGest.SaveChanges();
                     listarTrabalhadores();
+                    MessageBox.Show("Guardado.");
                 }
             }
         }
