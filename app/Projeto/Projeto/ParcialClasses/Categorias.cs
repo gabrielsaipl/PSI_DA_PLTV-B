@@ -20,7 +20,7 @@ namespace Projeto
 
         public override string ToString()
         {
-            return $"{Nome} - {Ativo}";
+            return $"{Nome}";
         }
     }
 }

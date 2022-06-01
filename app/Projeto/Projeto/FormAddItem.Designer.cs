@@ -32,18 +32,17 @@
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.btAlterarImagem = new System.Windows.Forms.Button();
             this.tbIngredientes = new System.Windows.Forms.TextBox();
             this.tbPreco = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btAlterarImagem = new System.Windows.Forms.Button();
+            this.btInfoImagem = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,16 +82,6 @@
             this.label1.Size = new System.Drawing.Size(174, 38);
             this.label1.TabIndex = 25;
             this.label1.Text = "Novo Item";
-            // 
-            // btAlterarImagem
-            // 
-            this.btAlterarImagem.BackgroundImage = global::Projeto.Properties.Resources.addImage;
-            this.btAlterarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btAlterarImagem.Location = new System.Drawing.Point(427, 109);
-            this.btAlterarImagem.Name = "btAlterarImagem";
-            this.btAlterarImagem.Size = new System.Drawing.Size(64, 50);
-            this.btAlterarImagem.TabIndex = 36;
-            this.btAlterarImagem.UseVisualStyleBackColor = true;
             // 
             // tbIngredientes
             // 
@@ -145,27 +134,6 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Nome :";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(41, 193);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Estado:";
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo"});
-            this.cbEstado.Location = new System.Drawing.Point(118, 193);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(165, 24);
-            this.cbEstado.TabIndex = 41;
-            // 
             // btAdicionar
             // 
             this.btAdicionar.BackColor = System.Drawing.SystemColors.Window;
@@ -175,14 +143,16 @@
             this.btAdicionar.TabIndex = 43;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = false;
+            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
             // cbCategoria
             // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.cbCategoria.Location = new System.Drawing.Point(118, 223);
+            this.cbCategoria.Location = new System.Drawing.Point(118, 193);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(165, 24);
             this.cbCategoria.TabIndex = 44;
@@ -191,11 +161,33 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(21, 223);
+            this.label3.Location = new System.Drawing.Point(21, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 45;
             this.label3.Text = "Categoria:";
+            // 
+            // btAlterarImagem
+            // 
+            this.btAlterarImagem.BackgroundImage = global::Projeto.Properties.Resources.addImage;
+            this.btAlterarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btAlterarImagem.Location = new System.Drawing.Point(371, 109);
+            this.btAlterarImagem.Name = "btAlterarImagem";
+            this.btAlterarImagem.Size = new System.Drawing.Size(53, 50);
+            this.btAlterarImagem.TabIndex = 36;
+            this.btAlterarImagem.UseVisualStyleBackColor = true;
+            this.btAlterarImagem.Click += new System.EventHandler(this.btAlterarImagem_Click);
+            // 
+            // btInfoImagem
+            // 
+            this.btInfoImagem.BackgroundImage = global::Projeto.Properties.Resources.Emblem_important_red_svg;
+            this.btInfoImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btInfoImagem.Location = new System.Drawing.Point(443, 109);
+            this.btInfoImagem.Name = "btInfoImagem";
+            this.btInfoImagem.Size = new System.Drawing.Size(50, 50);
+            this.btInfoImagem.TabIndex = 46;
+            this.btInfoImagem.UseVisualStyleBackColor = true;
+            this.btInfoImagem.Click += new System.EventHandler(this.btInfoImagem_Click);
             // 
             // FormAddItem
             // 
@@ -203,10 +195,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(505, 337);
+            this.Controls.Add(this.btInfoImagem);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btAdicionar);
-            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.btAlterarImagem);
             this.Controls.Add(this.tbIngredientes);
             this.Controls.Add(this.tbPreco);
@@ -216,7 +208,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.label2);
             this.MaximumSize = new System.Drawing.Size(523, 384);
             this.MinimumSize = new System.Drawing.Size(523, 384);
             this.Name = "FormAddItem";
@@ -242,10 +233,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Button btAdicionar;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btInfoImagem;
     }
 }

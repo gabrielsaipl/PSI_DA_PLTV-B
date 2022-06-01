@@ -152,7 +152,7 @@
     </Key>
     <Property Name="IdItemMenu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Fotografia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fotografia" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Ingredientes" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Preco" Type="float" Nullable="false" />
     <Property Name="Ativo" Type="nvarchar(max)" Nullable="false" />
@@ -555,7 +555,7 @@
           </Key>
           <Property Name="IdItemMenu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Fotografia" Type="String" Nullable="false" />
+          <Property Name="Fotografia" Type="String" Nullable="true" />
           <Property Name="Ingredientes" Type="String" Nullable="false" />
           <Property Name="Preco" Type="Double" Nullable="false" />
           <Property Name="Ativo" Type="String" Nullable="false" />
