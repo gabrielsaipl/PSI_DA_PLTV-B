@@ -42,8 +42,9 @@
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btAlterarImagem = new System.Windows.Forms.Button();
-            this.btInfoImagem = new System.Windows.Forms.Button();
+            this.pbImagem = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -171,23 +172,20 @@
             // 
             this.btAlterarImagem.BackgroundImage = global::Projeto.Properties.Resources.addImage;
             this.btAlterarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btAlterarImagem.Location = new System.Drawing.Point(371, 109);
+            this.btAlterarImagem.Location = new System.Drawing.Point(376, 109);
             this.btAlterarImagem.Name = "btAlterarImagem";
             this.btAlterarImagem.Size = new System.Drawing.Size(53, 50);
             this.btAlterarImagem.TabIndex = 36;
             this.btAlterarImagem.UseVisualStyleBackColor = true;
             this.btAlterarImagem.Click += new System.EventHandler(this.btAlterarImagem_Click);
             // 
-            // btInfoImagem
+            // pbImagem
             // 
-            this.btInfoImagem.BackgroundImage = global::Projeto.Properties.Resources.Emblem_important_red_svg;
-            this.btInfoImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btInfoImagem.Location = new System.Drawing.Point(443, 109);
-            this.btInfoImagem.Name = "btInfoImagem";
-            this.btInfoImagem.Size = new System.Drawing.Size(50, 50);
-            this.btInfoImagem.TabIndex = 46;
-            this.btInfoImagem.UseVisualStyleBackColor = true;
-            this.btInfoImagem.Click += new System.EventHandler(this.btInfoImagem_Click);
+            this.pbImagem.Location = new System.Drawing.Point(435, 109);
+            this.pbImagem.Name = "pbImagem";
+            this.pbImagem.Size = new System.Drawing.Size(58, 50);
+            this.pbImagem.TabIndex = 47;
+            this.pbImagem.TabStop = false;
             // 
             // FormAddItem
             // 
@@ -195,7 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(505, 337);
-            this.Controls.Add(this.btInfoImagem);
+            this.Controls.Add(this.pbImagem);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btAdicionar);
@@ -215,6 +213,7 @@
             this.Text = "Rest Gest - Adicionar Item";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +235,6 @@
         private System.Windows.Forms.Button btAdicionar;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btInfoImagem;
+        private System.Windows.Forms.PictureBox pbImagem;
     }
 }

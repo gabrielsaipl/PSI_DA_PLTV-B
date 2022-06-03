@@ -63,15 +63,26 @@ namespace Projeto
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Title = "Selecione a imagem";
             dlg.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (dlg.ShowDialog() == DialogResult.OK)
+            try
             {
-                nomeImagem = dlg.SafeFileName;
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    if (dlg.CheckFileExists)
+                    {
+                        string pathImagem = System.IO.Path.GetFullPath(dlg.FileName);
+                        pbImagem.Image = new Bitmap(dlg.FileName);
+                        pbImagem.SizeMode = PictureBoxSizeMode.StretchImage;
+                        string nomeFicheiro = System.IO.Path.GetFileName(dlg.FileName);
+                        string pathProjeto = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                        System.IO.File.Copy(dlg.FileName, pathProjeto + "\\Resources\\ImagensItens\\" + nomeFicheiro);
+                        nomeImagem = dlg.SafeFileName;
+                    }
+                }
             }
-        }
-        
-        private void btInfoImagem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Para que a imagem seja guardada é necessário que a mesma esteja na pasta 'Resources' da aplicação.");
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar a imagem pretendida.");
+            }
         }
     }
 }
