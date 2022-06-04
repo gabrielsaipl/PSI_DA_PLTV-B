@@ -289,7 +289,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\update.png" />
-    <None Include="Resources\Emblem-important-red.svg.png" />
     <Content Include="RestGestModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RestGestModel.Context.cs</LastGenOutput>

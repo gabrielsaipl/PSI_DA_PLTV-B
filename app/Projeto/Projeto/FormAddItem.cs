@@ -34,12 +34,17 @@ namespace Projeto
 
         private void btAdicionar_Click(object sender, EventArgs e)
         {
+            if (nomeImagem is null)
+            {
+                MessageBox.Show("Adicione uma imagem.");
+                return;
+            }
             string nome = tbNome.Text;
             double preco = Convert.ToDouble(tbPreco.Text);
             string ingredientes = tbIngredientes.Text;
             string estado = "Ativo";
             Categoria categoria = cbCategoria.SelectedItem as Categoria;
-            if (nome !=  "" && preco > 0 && ingredientes != "" && estado != "" && categoria != null)
+            if (nome !=  "" && preco >= 0 && ingredientes != "" && estado != "" && categoria != null)
             {
                 ItemMenu novoItem = new ItemMenu(nome, preco, ingredientes, estado, nomeImagem);
                 novoItem.CategoriaIdCategoria = categoria.IdCategoria;
