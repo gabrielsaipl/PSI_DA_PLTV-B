@@ -48,7 +48,7 @@ namespace Projeto
         private void listarItensCadeia()
         {
             lvItens.Items.Clear();
-            int i = 0, indiceImagem=0;
+            int i = 0;
             foreach (ItemMenu item in restGest.ItemMenu.ToList())
             {
                 var linha = new string[]
@@ -139,9 +139,54 @@ namespace Projeto
             listarItensCadeia();
         }
 
-        private void btFiltrar_Click(object sender, EventArgs e)
+        private void tbFiltrar_TextChanged(object sender, EventArgs e)
         {
+            if (restGest.ItemMenu.Count() > 0 && tbFiltrar.Text != "")
+            {
+                var itens = restGest.ItemMenu.ToList();
+                var itensFiltrados = itens.Where(item => item.Nome.Contains(tbFiltrar.Text)).ToList();
 
+
+                //CRIAR IMAGELIST BASEADO NO FILTRO
+                imageList1.Images.Clear();
+                string pastaImagens = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\resources\ImagensItens\";
+                imageList1.ImageSize = new Size(32, 32);
+                foreach (ItemMenu item in itensFiltrados)
+                {
+                    if (item.Fotografia != null)
+                    {
+                        string caminhoImagem = pastaImagens + item.Fotografia;
+                        imageList1.Images.Add(Image.FromFile(caminhoImagem));
+                    }
+                }
+
+                //LISTAR LISTVIEW BASEADO NO FILTRO
+                lvItens.Items.Clear();
+                int i = 0;
+                foreach (ItemMenu item in itensFiltrados)
+                {
+                    var linha = new string[]
+                    {
+                    item.Nome,
+                    item.Preco.ToString(),
+                    item.Ingredientes,
+                    item.Ativo,
+                    item.Categoria.Nome
+                    };
+
+                    ListViewItem lvi = new ListViewItem(linha, i);
+                    lvi.Tag = item;
+                    i++;
+                    lvItens.Items.Add(lvi);
+                }
+            }
+            else
+            {
+                criarImageList();
+                listarItensCadeia();
+            }
         }
+
+
     }
 }

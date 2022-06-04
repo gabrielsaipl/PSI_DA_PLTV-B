@@ -18,5 +18,10 @@ namespace Projeto
             this.Ativo = estado;
             this.Fotografia = fotografia;
         }
+
+        public override string ToString()
+        {
+            return $"{Nome} - {Preco}€";
+        }
     }
 }

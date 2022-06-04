@@ -37,7 +37,6 @@
             this.tbNome = new System.Windows.Forms.TextBox();
             this.tbIngredientes = new System.Windows.Forms.TextBox();
             this.btGravar = new System.Windows.Forms.Button();
-            this.btFiltrar = new System.Windows.Forms.Button();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.btUpdate = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,23 +130,13 @@
             this.btGravar.UseVisualStyleBackColor = false;
             this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
-            // btFiltrar
-            // 
-            this.btFiltrar.BackColor = System.Drawing.SystemColors.Window;
-            this.btFiltrar.Location = new System.Drawing.Point(290, 495);
-            this.btFiltrar.Name = "btFiltrar";
-            this.btFiltrar.Size = new System.Drawing.Size(143, 27);
-            this.btFiltrar.TabIndex = 38;
-            this.btFiltrar.Text = "Filtrar";
-            this.btFiltrar.UseVisualStyleBackColor = false;
-            this.btFiltrar.Click += new System.EventHandler(this.btFiltrar_Click);
-            // 
             // tbFiltrar
             // 
-            this.tbFiltrar.Location = new System.Drawing.Point(23, 497);
+            this.tbFiltrar.Location = new System.Drawing.Point(106, 495);
             this.tbFiltrar.Name = "tbFiltrar";
             this.tbFiltrar.Size = new System.Drawing.Size(261, 22);
             this.tbFiltrar.TabIndex = 37;
+            this.tbFiltrar.TextChanged += new System.EventHandler(this.tbFiltrar_TextChanged);
             // 
             // cbEstado
             // 
@@ -293,12 +283,23 @@
             this.btUpdate.UseVisualStyleBackColor = false;
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(37, 495);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Filtrar: ";
+            // 
             // FormItensCadeia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1324, 541);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.menuStrip1);
@@ -306,7 +307,6 @@
             this.Controls.Add(this.lvItens);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbEstado);
-            this.Controls.Add(this.btFiltrar);
             this.Controls.Add(this.tbFiltrar);
             this.Controls.Add(this.btGravar);
             this.Controls.Add(this.tbIngredientes);
@@ -338,7 +338,6 @@
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.TextBox tbIngredientes;
         private System.Windows.Forms.Button btGravar;
-        private System.Windows.Forms.Button btFiltrar;
         private System.Windows.Forms.TextBox tbFiltrar;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label2;
@@ -356,5 +355,6 @@
         private System.Windows.Forms.ColumnHeader Ativo;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btUpdate;
+        private System.Windows.Forms.Label label4;
     }
 }
