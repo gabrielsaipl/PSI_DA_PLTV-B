@@ -19,7 +19,7 @@ namespace Projeto
 
         public override string ToString()
         {
-            return $"({IdPessoa}) {Nome} - {Telemovel} - ({NumContribuinte})";
+            return $"{Nome} - {Telemovel} - ({NumContribuinte})";
         }
     }
 }

@@ -47,6 +47,7 @@ namespace Projeto
             restGest.Pessoa.Add(novoCliente);
 
             restGest.SaveChanges();         // GRAVAR ATUALIZAÇÕES
+            this.Close();
         }
     }
 }

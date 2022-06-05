@@ -62,8 +62,8 @@
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.voltarToolStripMenuItem.Text = "Cancelar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem

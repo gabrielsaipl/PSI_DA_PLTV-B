@@ -115,6 +115,12 @@
     <Compile Include="FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEstados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstados.Designer.cs">
+      <DependentUpon>FormEstados.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestaoRestaurante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,9 +183,12 @@
     </Compile>
     <Compile Include="ParcialClasses\Categorias.cs" />
     <Compile Include="ParcialClasses\Cliente.cs" />
+    <Compile Include="ParcialClasses\Estado.cs" />
     <Compile Include="ParcialClasses\ItemMenu.cs" />
     <Compile Include="ParcialClasses\MetodoPagamento.cs" />
     <Compile Include="ParcialClasses\Morada.cs" />
+    <Compile Include="ParcialClasses\Pagamento.cs" />
+    <Compile Include="ParcialClasses\Pedido.cs" />
     <Compile Include="ParcialClasses\Restaurante.cs" />
     <Compile Include="ParcialClasses\Trabalhador.cs" />
     <Compile Include="Pedido.cs">
@@ -233,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstados.resx">
+      <DependentUpon>FormEstados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestaoRestaurante.resx">
       <DependentUpon>FormGestaoRestaurante.cs</DependentUpon>
