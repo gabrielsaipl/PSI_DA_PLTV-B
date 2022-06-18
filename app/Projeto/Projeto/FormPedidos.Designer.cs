@@ -74,15 +74,16 @@
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
             // gravarPedidoToolStripMenuItem
             // 
             this.gravarPedidoToolStripMenuItem.Name = "gravarPedidoToolStripMenuItem";
-            this.gravarPedidoToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.gravarPedidoToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
             this.gravarPedidoToolStripMenuItem.Text = "Exportar Pedido";
+            this.gravarPedidoToolStripMenuItem.Click += new System.EventHandler(this.gravarPedidoToolStripMenuItem_Click);
             // 
             // cbRestaurante
             // 

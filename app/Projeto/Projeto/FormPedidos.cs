@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -327,6 +328,46 @@ namespace Projeto
             restGest.Estado.Add(estado3);
             restGest.Estado.Add(estado4);
             restGest.SaveChanges();
+        }
+
+        private void gravarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Restaurante restauranteSelecionado = cbRestaurante.SelectedItem as Restaurante;
+            Pedido pedidoSelecionado = lbPedidos.SelectedItem as Pedido;
+            SaveFileDialog sdlg = new SaveFileDialog();
+            sdlg.Title = "Guarde o ficheiro de dados";
+            sdlg.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (sdlg.ShowDialog() == DialogResult.OK)
+            {
+                string caminho = sdlg.FileName;
+                FileStream ficheiro = new FileStream(caminho, FileMode.Create, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(ficheiro);
+                sw.WriteLine(restauranteSelecionado.Nome);
+                sw.WriteLine(restauranteSelecionado.Morada.Pais);
+                sw.WriteLine(restauranteSelecionado.Morada.Cidade + "  "+ restauranteSelecionado.Morada.CodPostal);
+                sw.WriteLine(restauranteSelecionado.Morada.Rua);
+                sw.WriteLine("----------------------");
+                sw.WriteLine("Informação do Pedido");
+                sw.WriteLine("Pedido nº "+ pedidoSelecionado.IdPedido);
+                sw.WriteLine("Cliente - " + pedidoSelecionado.Cliente.Nome);
+                sw.WriteLine("Trabalhador a tratar do Pedido - " + pedidoSelecionado.Trabalhador.Nome);
+                sw.WriteLine("----------------------");
+                sw.WriteLine("Itens do Pedido:");
+                foreach(ItemMenu itemPedido in pedidoSelecionado.ItemMenu)
+                {
+                    sw.WriteLine("   - "+itemPedido.Nome+" -- "+itemPedido.Preco+"€");
+                }
+                sw.WriteLine("----------------------");
+                sw.WriteLine("Pagamentos do Pedido");
+                foreach (Pagamento pagamento in pedidoSelecionado.Pagamento)
+                {
+                    sw.WriteLine("   - "+ pagamento.Valor+"€ - "+pagamento.MetodoPagamento.MetodoPagament);
+                }
+                sw.WriteLine("----------------------");
+                sw.WriteLine("Estado atual do Pedido: " + pedidoSelecionado.Estado.Estadoo);
+                sw.Close();
+                ficheiro.Close();
+            } 
         }
     }
 }
