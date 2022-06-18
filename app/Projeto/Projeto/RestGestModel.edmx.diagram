@@ -14,8 +14,8 @@
         <InheritanceConnector EntityType="RestGestModel.Cliente" />
         <EntityTypeShape EntityType="RestGestModel.Pedido" Width="1.5" PointX="5" PointY="5.125" />
         <EntityTypeShape EntityType="RestGestModel.Pagamento" Width="1.5" PointX="1.375" PointY="6.5" />
-        <EntityTypeShape EntityType="RestGestModel.MetodoPagamento" Width="1.5" PointX="1.25" PointY="9" />
-        <EntityTypeShape EntityType="RestGestModel.Estado" Width="1.5" PointX="5.125" PointY="8.75" />
+        <EntityTypeShape EntityType="RestGestModel.MetodoPagamento" Width="1.5" PointX="1.25" PointY="9.125" />
+        <EntityTypeShape EntityType="RestGestModel.Estado" Width="1.5" PointX="5" PointY="9.125" />
         <EntityTypeShape EntityType="RestGestModel.ItemMenu" Width="1.5" PointX="9.625" PointY="4.125" />
         <EntityTypeShape EntityType="RestGestModel.Categoria" Width="1.5" PointX="9.75" PointY="7.625" />
         <AssociationConnector Association="RestGestModel.RestauranteTrabalhador"></AssociationConnector>

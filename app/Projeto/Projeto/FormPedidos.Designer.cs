@@ -67,7 +67,7 @@
             this.gravarPedidoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1130, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1425, 28);
             this.menuStrip1.TabIndex = 44;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(520, 46);
+            this.label1.Location = new System.Drawing.Point(717, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 38);
             this.label1.TabIndex = 46;
@@ -138,7 +138,7 @@
             // btPagamento
             // 
             this.btPagamento.BackColor = System.Drawing.SystemColors.Window;
-            this.btPagamento.Location = new System.Drawing.Point(612, 501);
+            this.btPagamento.Location = new System.Drawing.Point(589, 491);
             this.btPagamento.Name = "btPagamento";
             this.btPagamento.Size = new System.Drawing.Size(123, 84);
             this.btPagamento.TabIndex = 50;
@@ -151,7 +151,7 @@
             this.btNovo.BackColor = System.Drawing.SystemColors.Window;
             this.btNovo.Location = new System.Drawing.Point(446, 172);
             this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(351, 47);
+            this.btNovo.Size = new System.Drawing.Size(302, 47);
             this.btNovo.TabIndex = 51;
             this.btNovo.Text = "Adicionar Pedido";
             this.btNovo.UseVisualStyleBackColor = false;
@@ -175,7 +175,7 @@
             // 
             // tbFiltrarMenu
             // 
-            this.tbFiltrarMenu.Location = new System.Drawing.Point(955, 358);
+            this.tbFiltrarMenu.Location = new System.Drawing.Point(920, 598);
             this.tbFiltrarMenu.Name = "tbFiltrarMenu";
             this.tbFiltrarMenu.Size = new System.Drawing.Size(156, 22);
             this.tbFiltrarMenu.TabIndex = 59;
@@ -185,15 +185,15 @@
             // 
             this.lbMenu.FormattingEnabled = true;
             this.lbMenu.ItemHeight = 16;
-            this.lbMenu.Location = new System.Drawing.Point(807, 172);
+            this.lbMenu.Location = new System.Drawing.Point(772, 172);
             this.lbMenu.Name = "lbMenu";
-            this.lbMenu.Size = new System.Drawing.Size(304, 180);
+            this.lbMenu.Size = new System.Drawing.Size(304, 420);
             this.lbMenu.TabIndex = 58;
             // 
             // btAdicionarItem
             // 
             this.btAdicionarItem.BackColor = System.Drawing.SystemColors.Window;
-            this.btAdicionarItem.Location = new System.Drawing.Point(807, 386);
+            this.btAdicionarItem.Location = new System.Drawing.Point(1097, 528);
             this.btAdicionarItem.Name = "btAdicionarItem";
             this.btAdicionarItem.Size = new System.Drawing.Size(304, 29);
             this.btAdicionarItem.TabIndex = 61;
@@ -204,7 +204,7 @@
             // btRemoverItem
             // 
             this.btRemoverItem.BackColor = System.Drawing.SystemColors.Window;
-            this.btRemoverItem.Location = new System.Drawing.Point(807, 599);
+            this.btRemoverItem.Location = new System.Drawing.Point(1097, 563);
             this.btRemoverItem.Name = "btRemoverItem";
             this.btRemoverItem.Size = new System.Drawing.Size(304, 29);
             this.btRemoverItem.TabIndex = 63;
@@ -216,16 +216,16 @@
             // 
             this.lbitensPedido.FormattingEnabled = true;
             this.lbitensPedido.ItemHeight = 16;
-            this.lbitensPedido.Location = new System.Drawing.Point(807, 421);
+            this.lbitensPedido.Location = new System.Drawing.Point(1097, 172);
             this.lbitensPedido.Name = "lbitensPedido";
-            this.lbitensPedido.Size = new System.Drawing.Size(304, 164);
+            this.lbitensPedido.Size = new System.Drawing.Size(304, 340);
             this.lbitensPedido.TabIndex = 64;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(891, 358);
+            this.label3.Location = new System.Drawing.Point(856, 598);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 20);
             this.label3.TabIndex = 65;
@@ -254,9 +254,9 @@
             // btEstados
             // 
             this.btEstados.BackColor = System.Drawing.SystemColors.Window;
-            this.btEstados.Location = new System.Drawing.Point(1002, 90);
+            this.btEstados.Location = new System.Drawing.Point(1249, 112);
             this.btEstados.Name = "btEstados";
-            this.btEstados.Size = new System.Drawing.Size(109, 54);
+            this.btEstados.Size = new System.Drawing.Size(152, 54);
             this.btEstados.TabIndex = 68;
             this.btEstados.Text = "Estados";
             this.btEstados.UseVisualStyleBackColor = false;
@@ -299,7 +299,7 @@
             // btSave
             // 
             this.btSave.BackColor = System.Drawing.SystemColors.Window;
-            this.btSave.Location = new System.Drawing.Point(476, 501);
+            this.btSave.Location = new System.Drawing.Point(453, 491);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(130, 84);
             this.btSave.TabIndex = 72;
@@ -313,7 +313,7 @@
             this.cbClientes.FormattingEnabled = true;
             this.cbClientes.Location = new System.Drawing.Point(446, 359);
             this.cbClientes.Name = "cbClientes";
-            this.cbClientes.Size = new System.Drawing.Size(351, 24);
+            this.cbClientes.Size = new System.Drawing.Size(302, 24);
             this.cbClientes.TabIndex = 73;
             // 
             // cbTrabalhadores
@@ -322,14 +322,14 @@
             this.cbTrabalhadores.FormattingEnabled = true;
             this.cbTrabalhadores.Location = new System.Drawing.Point(446, 257);
             this.cbTrabalhadores.Name = "cbTrabalhadores";
-            this.cbTrabalhadores.Size = new System.Drawing.Size(351, 24);
+            this.cbTrabalhadores.Size = new System.Drawing.Size(302, 24);
             this.cbTrabalhadores.TabIndex = 74;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(803, 149);
+            this.label8.Location = new System.Drawing.Point(768, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 20);
             this.label8.TabIndex = 75;
@@ -340,7 +340,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1130, 642);
+            this.ClientSize = new System.Drawing.Size(1425, 642);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbTrabalhadores);
             this.Controls.Add(this.cbClientes);
@@ -367,8 +367,8 @@
             this.Controls.Add(this.cbRestaurante);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
-            this.MaximumSize = new System.Drawing.Size(1148, 689);
-            this.MinimumSize = new System.Drawing.Size(1148, 689);
+            this.MaximumSize = new System.Drawing.Size(1443, 689);
+            this.MinimumSize = new System.Drawing.Size(1443, 689);
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Pedidos";

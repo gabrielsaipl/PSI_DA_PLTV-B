@@ -38,6 +38,11 @@ namespace Projeto
         {
             Pedido pedidoSelecionado = lbPedidos.SelectedItem as Pedido;
             if (pedidoSelecionado == null) return;
+            if (pedidoSelecionado.ValorTotal <= 0)
+            {
+                MessageBox.Show("Ainda não existem itens no Pedido");
+                return;
+            }
             idPedido = pedidoSelecionado.IdPedido;
             FormPagamentos formPagamentos = new FormPagamentos();
             formPagamentos.ShowDialog();
@@ -252,6 +257,7 @@ namespace Projeto
             if (itemSelecionado == null) return;
             pedidoSelecionado.ItemMenu.Add(itemSelecionado);
             pedidoSelecionado.ValorTotal += itemSelecionado.Preco;
+            pedidoSelecionado.Cliente.TotalGasto += itemSelecionado.Preco;
             restGest.SaveChanges();
             listarItensPedido();
             listarPedidos();
@@ -273,10 +279,11 @@ namespace Projeto
         {
             Pedido pedidoSelecionado = lbPedidos.SelectedItem as Pedido;
             if (pedidoSelecionado == null) return;
-            ItemMenu itemSelecionado = lbMenu.SelectedItem as ItemMenu;
+            ItemMenu itemSelecionado = lbitensPedido.SelectedItem as ItemMenu;
             if (itemSelecionado == null) return;
             pedidoSelecionado.ItemMenu.Remove(itemSelecionado);
             pedidoSelecionado.ValorTotal -= itemSelecionado.Preco;
+            pedidoSelecionado.Cliente.TotalGasto -= itemSelecionado.Preco;
             restGest.SaveChanges();
             listarItensPedido();
             listarPedidos();

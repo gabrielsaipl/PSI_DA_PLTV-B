@@ -131,5 +131,34 @@ namespace Projeto
                 tbCodPostal.Text = cliente.Morada.CodPostal;
             }
         }
+
+        private void btApagar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.SelectedRows.Count <= 0) return;
+            Cliente cliente = dgvClientes.SelectedRows[0].DataBoundItem as Cliente;
+            Morada moradaCliente = cliente.Morada;
+            // para cada pedido do Cliente Selecionado
+            foreach(Pedido pedido in cliente.Pedido.ToList())
+            {
+                //para cada pagamento do pedido 
+                foreach (Pagamento pagamento in pedido.Pagamento.ToList())
+                {
+                    //Eliminar pagamento do pedido
+                    restGest.Pagamento.Remove(pagamento);
+                }
+                //para cada itemMenu de cada pedido
+                foreach(ItemMenu itemPedido in pedido.ItemMenu.ToList())
+                {
+                    //Eliminar Item do pedido
+                    pedido.ItemMenu.Remove(itemPedido);
+                }
+                //Elimina o Pedido do Cliente
+                restGest.Pedido.Remove(pedido);
+            }
+            restGest.Pessoa.Remove(cliente);
+            restGest.Morada.Remove(moradaCliente);
+            restGest.SaveChanges();
+            listarClientes();
+        }
     }
 }

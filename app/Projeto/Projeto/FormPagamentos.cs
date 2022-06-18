@@ -87,6 +87,7 @@ namespace Projeto
             restGest.SaveChanges();
             preencherLabels();
             listarPagamentos();
+            tbValor.Text = "";
         }
 
         /// <summary>

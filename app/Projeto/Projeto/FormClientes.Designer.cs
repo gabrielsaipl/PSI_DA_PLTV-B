@@ -57,12 +57,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btApagar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -338,6 +338,7 @@
             this.btApagar.TabIndex = 24;
             this.btApagar.Text = "Apagar Cliente";
             this.btApagar.UseVisualStyleBackColor = false;
+            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
             // 
             // dgvClientes
             // 
