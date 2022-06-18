@@ -18,17 +18,13 @@ namespace Projeto
             InitializeComponent();
             this.ControlBox = false;
             restGest = new RestGestModelContainer();
+            estadosPredefinidos();
             listarEstados();
         }
 
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btNovo_Click(object sender, EventArgs e)
@@ -69,6 +65,23 @@ namespace Projeto
         private void listarEstados()
         {
             lbEstados.DataSource = restGest.Estado.ToList<Estado>();
+        }
+
+        /// <summary>
+        /// Vai colocar na base de dados se ainda não existirem os quatro estados obrigatórios
+        /// </summary>
+        private void estadosPredefinidos()
+        {
+            if (restGest.Estado.Count() > 4) return;
+            Estado estado1 = new Estado("Recebido");
+            Estado estado2 = new Estado("Em processamento");
+            Estado estado3 = new Estado("Cancelado");
+            Estado estado4 = new Estado("Concluído");
+            restGest.Estado.Add(estado1);
+            restGest.Estado.Add(estado2);
+            restGest.Estado.Add(estado3);
+            restGest.Estado.Add(estado4);
+            restGest.SaveChanges();
         }
     }
 }

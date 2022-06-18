@@ -30,10 +30,6 @@ namespace Projeto
             this.Close();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         /// <summary>
         /// Listar os métodos de pagamento

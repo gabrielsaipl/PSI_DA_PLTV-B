@@ -29,7 +29,7 @@ namespace Projeto
 
         public override string ToString()
         {
-            return $"{Nome} - {Salario}€ - {Telemovel} - {Posicao}";
+            return $"{Nome} - {Telemovel} - {Posicao}";
         }
     }
 }

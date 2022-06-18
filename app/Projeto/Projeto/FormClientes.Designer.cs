@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbClientes = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPais = new System.Windows.Forms.TextBox();
@@ -57,30 +56,28 @@
             this.btUpdate = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.btApagar = new System.Windows.Forms.Button();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbClientes
-            // 
-            this.lbClientes.FormattingEnabled = true;
-            this.lbClientes.ItemHeight = 16;
-            this.lbClientes.Location = new System.Drawing.Point(423, 112);
-            this.lbClientes.Name = "lbClientes";
-            this.lbClientes.Size = new System.Drawing.Size(446, 388);
-            this.lbClientes.TabIndex = 0;
-            this.lbClientes.SelectedIndexChanged += new System.EventHandler(this.lbClientes_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.voltarToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.voltarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1506, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,19 +88,11 @@
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(354, 53);
+            this.label1.Location = new System.Drawing.Point(711, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 38);
             this.label1.TabIndex = 2;
@@ -309,7 +298,7 @@
             // 
             // tbFiltrar
             // 
-            this.tbFiltrar.Location = new System.Drawing.Point(496, 506);
+            this.tbFiltrar.Location = new System.Drawing.Point(1121, 506);
             this.tbFiltrar.Name = "tbFiltrar";
             this.tbFiltrar.Size = new System.Drawing.Size(373, 22);
             this.tbFiltrar.TabIndex = 13;
@@ -322,7 +311,7 @@
             this.btUpdate.FlatAppearance.BorderSize = 0;
             this.btUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btUpdate.Location = new System.Drawing.Point(817, 50);
+            this.btUpdate.Location = new System.Drawing.Point(1442, 65);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(52, 41);
             this.btUpdate.TabIndex = 22;
@@ -333,7 +322,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(437, 506);
+            this.label11.Location = new System.Drawing.Point(1062, 506);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 20);
             this.label11.TabIndex = 23;
@@ -350,12 +339,81 @@
             this.btApagar.Text = "Apagar Cliente";
             this.btApagar.UseVisualStyleBackColor = false;
             // 
+            // dgvClientes
+            // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AutoGenerateColumns = false;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dgvClientes.DataSource = this.bsClientes;
+            this.dgvClientes.Location = new System.Drawing.Point(424, 112);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.RowHeadersWidth = 51;
+            this.dgvClientes.RowTemplate.Height = 24;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(1070, 388);
+            this.dgvClientes.TabIndex = 25;
+            this.dgvClientes.SelectionChanged += new System.EventHandler(this.dgvClientes_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Telemovel";
+            this.Column2.HeaderText = "Telemovel";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TotalGasto";
+            this.Column3.HeaderText = "Total Gasto";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NumContribuinte";
+            this.Column4.HeaderText = "NIF";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Morada";
+            this.Column5.HeaderText = "Morada";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 247;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(881, 567);
+            this.ClientSize = new System.Drawing.Size(1506, 567);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btApagar);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.tbFiltrar);
@@ -364,14 +422,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbClientes);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label11);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(899, 614);
+            this.MaximumSize = new System.Drawing.Size(1524, 614);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(899, 614);
+            this.MinimumSize = new System.Drawing.Size(1524, 614);
             this.Name = "FormClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RestGest - Clientes";
@@ -381,14 +438,14 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbClientes;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.Label label1;
@@ -411,11 +468,17 @@
         private System.Windows.Forms.MaskedTextBox tbTelemovel;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btNovoCliente;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.TextBox tbFiltrar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btApagar;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.BindingSource bsClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

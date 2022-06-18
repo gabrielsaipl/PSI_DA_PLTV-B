@@ -20,17 +20,13 @@ namespace Projeto
             this.ControlBox = false;
             restGest = new RestGestModelContainer();
             preencherComboBoxRestaurantes();
+            estadosPredefinidos();
             listarPedidos();
             listarItensMenu();
             listarClientes();
             listarTrabalhadores();
             listarItensPedido();
             listarEstados();
-        }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,14 +78,14 @@ namespace Projeto
         /// </summary>
         private void listarClientes()
         {
-            lbCliente.DataSource = null;
+            cbClientes.DataSource = null;
             // VERIFICA SE EXISTE PESSOAS (TRABALHADORES OU CLIENTES)
             if (restGest.Pessoa.Count() > 0)
             {
                 // SELECIONA OS OBJETOS DO TIPO CLIENTE DE TODAS AS PESSOAS
                 var clientes = restGest.Pessoa.OfType<Cliente>().ToList();
                 // VERIFICA SE EXISTEM CLIENTES
-                if (clientes.Count() > 0) lbCliente.DataSource = clientes;
+                if (clientes.Count() > 0) cbClientes.DataSource = clientes;
             }
         }
 
@@ -98,7 +94,7 @@ namespace Projeto
         /// </summary>
         private void listarTrabalhadores()
         {
-            lbTrabalhadores.DataSource = null;
+            cbTrabalhadores.DataSource = null;
             // VERIFICA SE EXISTE PESSOAS (TRABALHADORES OU CLIENTES)
             if (restGest.Pessoa.Count() > 0)
             {
@@ -115,7 +111,7 @@ namespace Projeto
                         var trabalhadoresAtivos = trabalhadoresRestaurante.Where(trabalhador => trabalhador.Ativo == true).ToList();
                         if (trabalhadoresAtivos.Count() > 0)
                         {
-                            lbTrabalhadores.DataSource = trabalhadoresRestaurante;
+                            cbTrabalhadores.DataSource = trabalhadoresRestaurante;
                         }
                     }
                 }
@@ -181,7 +177,7 @@ namespace Projeto
         /// </summary>
         private void tbFiltrarTrabalhador_TextChanged(object sender, EventArgs e)
         {
-            lbTrabalhadores.DataSource = null;
+            cbTrabalhadores.DataSource = null;
             if (restGest.Pessoa.Count() > 0)
             {
                 Restaurante restauranteSelecionado = cbRestaurante.SelectedItem as Restaurante;
@@ -197,10 +193,10 @@ namespace Projeto
                         {
                             var trabalhadoresFiltrados = trabalhadoresRestaurante.Where(trabalhador => trabalhador.Nome.Contains(tbFiltrarTrabalhador.Text)).ToList();
                             // VERIFICAR SE EXISTEM TRABALHADORES COM O FILTRO APLICADO
-                            if (trabalhadoresFiltrados.Count() > 0) lbTrabalhadores.DataSource = trabalhadoresFiltrados;
-                            else lbTrabalhadores.DataSource = null;
+                            if (trabalhadoresFiltrados.Count() > 0) cbTrabalhadores.DataSource = trabalhadoresFiltrados;
+                            else cbTrabalhadores.DataSource = null;
                         }
-                        else lbTrabalhadores.DataSource = trabalhadoresRestaurante;
+                        else cbTrabalhadores.DataSource = trabalhadoresRestaurante;
                     }
                 }
             }
@@ -211,7 +207,7 @@ namespace Projeto
         /// </summary>
         private void tbFiltrarCliente_TextChanged(object sender, EventArgs e)
         {
-            lbCliente.DataSource = null;
+            cbClientes.DataSource = null;
             if (restGest.Pessoa.Count() > 0)
             {
                 // SELECIONA OS OBJETOS DO TIPO CLIENTE DE TODAS AS PESSOAS
@@ -222,10 +218,10 @@ namespace Projeto
                     {
                         var clientesFiltrados = clientes.Where(cliente => cliente.Nome.Contains(tbFiltrarCliente.Text)).ToList();
                         // VERIFICAR SE EXISTEM TRABALHADORES COM O FILTRO APLICADO
-                        if (clientesFiltrados.Count() > 0) lbCliente.DataSource = clientesFiltrados;
-                        else lbCliente.DataSource = null;
+                        if (clientesFiltrados.Count() > 0) cbClientes.DataSource = clientesFiltrados;
+                        else cbClientes.DataSource = null;
                     }
-                    else lbCliente.DataSource = clientes;
+                    else cbClientes.DataSource = clientes;
                 }
             }
         }
@@ -236,8 +232,8 @@ namespace Projeto
             if (restauranteSelecionado == null) return;
             //ADICIONAR PEDIDO E OBTER IDS ESTRANGEIROS DO PEDIDO
             Pedido novoPedido = new Pedido();
-            Cliente clienteSelecionado = lbCliente.SelectedItem as Cliente;
-            Trabalhador trabalhadorSelecionado = lbTrabalhadores.SelectedItem as Trabalhador;
+            Cliente clienteSelecionado = cbClientes.SelectedItem as Cliente;
+            Trabalhador trabalhadorSelecionado = cbTrabalhadores.SelectedItem as Trabalhador;
             Estado estadoSelecionado = cbEstado.SelectedItem as Estado;
             if(estadoSelecionado == null || trabalhadorSelecionado == null || clienteSelecionado == null) return;
             novoPedido.Estado = estadoSelecionado;
@@ -292,8 +288,8 @@ namespace Projeto
             listarItensPedido();
             Pedido pedidoSelecionado = lbPedidos.SelectedItem as Pedido;
             if(pedidoSelecionado == null) return;
-            lbCliente.SelectedItem = pedidoSelecionado.Cliente;
-            lbTrabalhadores.SelectedItem = pedidoSelecionado.Trabalhador;
+            cbClientes.SelectedItem = pedidoSelecionado.Cliente;
+            cbTrabalhadores.SelectedItem = pedidoSelecionado.Trabalhador;
             cbEstado.SelectedItem = pedidoSelecionado.Estado;
         }
 
@@ -301,16 +297,29 @@ namespace Projeto
         {
             Pedido pedidoSelecionado = lbPedidos.SelectedItem as Pedido;
             if (pedidoSelecionado == null) return;
-            Cliente clienteSelecionado = lbCliente.SelectedItem as Cliente;
-            Trabalhador trabalhadorSelecionado = lbTrabalhadores.SelectedItem as Trabalhador;
             Estado estadoSelecionado = cbEstado.SelectedItem as Estado;
-            if (clienteSelecionado == null || trabalhadorSelecionado == null || estadoSelecionado == null) return;
-            pedidoSelecionado.Trabalhador = trabalhadorSelecionado;
-            pedidoSelecionado.Cliente = clienteSelecionado;
+            if (estadoSelecionado == null) return;
             pedidoSelecionado.Estado = estadoSelecionado;
             restGest.SaveChanges();
             listarPedidos();
             lbPedidos.SelectedItem = pedidoSelecionado;
+        }
+
+        /// <summary>
+        /// Vai colocar na base de dados se ainda não existirem os quatro estados obrigatórios
+        /// </summary>
+        private void estadosPredefinidos()
+        {
+            if (restGest.Estado.Count() > 4) return;
+            Estado estado1 = new Estado("Recebido");
+            Estado estado2 = new Estado("Em processamento");
+            Estado estado3 = new Estado("Cancelado");
+            Estado estado4 = new Estado("Concluído");
+            restGest.Estado.Add(estado1);
+            restGest.Estado.Add(estado2);
+            restGest.Estado.Add(estado3);
+            restGest.Estado.Add(estado4);
+            restGest.SaveChanges();
         }
     }
 }

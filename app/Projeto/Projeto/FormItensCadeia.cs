@@ -14,13 +14,11 @@ namespace Projeto
     public partial class FormItensCadeia : Form
     {
         RestGestModelContainer restGest;
-        ImageList il;
         public FormItensCadeia()
         {
             InitializeComponent();
             this.ControlBox = false;
             restGest = new RestGestModelContainer();
-            il = new ImageList();
             criarImageList();
             preencherComboBoxCategorias();
             listarItensCadeia();
@@ -29,11 +27,6 @@ namespace Projeto
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btNovo_Click(object sender, EventArgs e)

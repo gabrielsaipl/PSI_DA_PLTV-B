@@ -27,11 +27,6 @@ namespace Projeto
             
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btNovoCliente_Click(object sender, EventArgs e)
         {
             FormAddCliente addcliente = new FormAddCliente();
@@ -46,21 +41,7 @@ namespace Projeto
 
 
 
-        private void lbClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // SE HOUVER CLIENTE SELECIONADO
-            if (lbClientes.SelectedIndex >= 0) 
-            {
-                Cliente cliente = lbClientes.SelectedItem as Cliente;
-                tbNome.Text = cliente.Nome;
-                tbTelemovel.Text = cliente.Telemovel;
-                tbNif.Text = cliente.NumContribuinte;
-                tbPais.Text = cliente.Morada.Pais;
-                tbRua.Text = cliente.Morada.Rua;
-                tbCidade.Text = cliente.Morada.Cidade;
-                tbCodPostal.Text = cliente.Morada.CodPostal;
-            }
-        }
+
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
@@ -72,14 +53,14 @@ namespace Projeto
         /// </summary>
         private void listarClientes()
         {
-            lbClientes.DataSource = null;
+            bsClientes.DataSource = null;
             // VERIFICA SE EXISTE PESSOAS (TRABALHADORES OU CLIENTES)
             if (restGest.Pessoa.Count() > 0)    
             {
                 // SELECIONA OS OBJETOS DO TIPO CLIENTE DE TODAS AS PESSOAS
                 var clientes = restGest.Pessoa.OfType<Cliente>().ToList();
                 // VERIFICA SE EXISTEM CLIENTES
-                if (clientes.Count() > 0) lbClientes.DataSource = clientes; 
+                if (clientes.Count() > 0) bsClientes.DataSource = clientes; 
                 else MessageBox.Show("Ainda não existem clientes");
             }
             else MessageBox.Show("Ainda não existem Clientes");
@@ -87,7 +68,7 @@ namespace Projeto
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            if (lbClientes.SelectedIndex >= 0)
+            if (dgvClientes.SelectedRows.Count > 0)
             {
                 string pais = tbPais.Text;
                 string cidade = tbCidade.Text;
@@ -98,7 +79,7 @@ namespace Projeto
                 string nif = tbNif.Text;
                 if (pais != "" && cidade != "" && codPostal != "" && rua != "" && nome != "" && telemovel != "" && nif != "")
                 {
-                    Cliente cliente = lbClientes.SelectedItem as Cliente;
+                    Cliente cliente = dgvClientes.SelectedRows[0].DataBoundItem as Cliente;
                     cliente.Telemovel = telemovel;
                     cliente.Nome = nome;
                     cliente.NumContribuinte = nif;
@@ -114,7 +95,7 @@ namespace Projeto
 
         private void tbFiltrar_TextChanged(object sender, EventArgs e)
         {
-            lbClientes.DataSource = null;
+            bsClientes.DataSource = null;
             // VERIFICA SE EXISTE PESSOAS (TRABALHADORES OU CLIENTES)
             if (restGest.Pessoa.Count() > 0)
             {
@@ -127,11 +108,27 @@ namespace Projeto
                     {
                         var clientesFiltrados = clientes.Where(cliente => cliente.Nome.Contains(tbFiltrar.Text)).ToList();
                         // VERIFICAR SE EXISTEM TRABALHADORES COM O FILTRO APLICADO
-                        if (clientesFiltrados.Count() > 0) lbClientes.DataSource = clientesFiltrados;
-                        else lbClientes.DataSource = null;
+                        if (clientesFiltrados.Count() > 0) bsClientes.DataSource = clientesFiltrados;
+                        else bsClientes.DataSource = null;
                     }
-                    else lbClientes.DataSource = clientes;
+                    else bsClientes.DataSource = clientes;
                 }
+            }
+        }
+
+        private void dgvClientes_SelectionChanged(object sender, EventArgs e)
+        {
+            // SE HOUVER CLIENTE SELECIONADO
+            if (dgvClientes.SelectedRows.Count > 0)
+            {
+                Cliente cliente = dgvClientes.SelectedRows[0].DataBoundItem as Cliente;
+                tbNome.Text = cliente.Nome;
+                tbTelemovel.Text = cliente.Telemovel;
+                tbNif.Text = cliente.NumContribuinte;
+                tbPais.Text = cliente.Morada.Pais;
+                tbRua.Text = cliente.Morada.Rua;
+                tbCidade.Text = cliente.Morada.Cidade;
+                tbCodPostal.Text = cliente.Morada.CodPostal;
             }
         }
     }

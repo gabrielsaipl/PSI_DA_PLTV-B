@@ -20,11 +20,6 @@ namespace Projeto
             restGest = new RestGestModelContainer();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void cancelarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -47,6 +42,7 @@ namespace Projeto
             restGest.Pessoa.Add(novoCliente);
 
             restGest.SaveChanges();         // GRAVAR ATUALIZAÇÕES
+            MessageBox.Show("Clique no botão de atualizar que está acima da lista para que a lista seja atualizada!");
             this.Close();
         }
     }

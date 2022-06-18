@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbRestaurante = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbAtivo = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tbPosicao = new System.Windows.Forms.TextBox();
             this.tbTelemovel = new System.Windows.Forms.MaskedTextBox();
             this.tbSalario = new System.Windows.Forms.TextBox();
@@ -52,29 +54,34 @@
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
-            this.lbTrabalhadores = new System.Windows.Forms.ListBox();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
             this.btPedidos = new System.Windows.Forms.Button();
             this.btMenus = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btUpdate = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbAtivo = new System.Windows.Forms.ComboBox();
+            this.bsTrabalhadores = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvTrabalhadores = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhadores)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.voltarToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.voltarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(830, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1471, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,14 +91,6 @@
             this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // cbRestaurante
             // 
@@ -121,6 +120,29 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Trabalhador";
+            // 
+            // cbAtivo
+            // 
+            this.cbAtivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAtivo.FormattingEnabled = true;
+            this.cbAtivo.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.cbAtivo.Location = new System.Drawing.Point(105, 119);
+            this.cbAtivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbAtivo.Name = "cbAtivo";
+            this.cbAtivo.Size = new System.Drawing.Size(113, 24);
+            this.cbAtivo.TabIndex = 20;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(-4, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 20);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Em serviço:";
             // 
             // tbPosicao
             // 
@@ -291,27 +313,17 @@
             // btNovo
             // 
             this.btNovo.BackColor = System.Drawing.SystemColors.Window;
-            this.btNovo.Location = new System.Drawing.Point(6, 444);
+            this.btNovo.Location = new System.Drawing.Point(12, 500);
             this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(372, 41);
+            this.btNovo.Size = new System.Drawing.Size(372, 52);
             this.btNovo.TabIndex = 16;
             this.btNovo.Text = "Criar novo trabalhador";
             this.btNovo.UseVisualStyleBackColor = false;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
-            // lbTrabalhadores
-            // 
-            this.lbTrabalhadores.FormattingEnabled = true;
-            this.lbTrabalhadores.ItemHeight = 16;
-            this.lbTrabalhadores.Location = new System.Drawing.Point(390, 97);
-            this.lbTrabalhadores.Name = "lbTrabalhadores";
-            this.lbTrabalhadores.Size = new System.Drawing.Size(410, 324);
-            this.lbTrabalhadores.TabIndex = 17;
-            this.lbTrabalhadores.SelectedIndexChanged += new System.EventHandler(this.lbTrabalhadores_SelectedIndexChanged);
-            // 
             // tbFiltrar
             // 
-            this.tbFiltrar.Location = new System.Drawing.Point(454, 427);
+            this.tbFiltrar.Location = new System.Drawing.Point(1112, 463);
             this.tbFiltrar.Name = "tbFiltrar";
             this.tbFiltrar.Size = new System.Drawing.Size(346, 22);
             this.tbFiltrar.TabIndex = 15;
@@ -320,7 +332,7 @@
             // btPedidos
             // 
             this.btPedidos.BackColor = System.Drawing.SystemColors.Window;
-            this.btPedidos.Location = new System.Drawing.Point(67, 491);
+            this.btPedidos.Location = new System.Drawing.Point(390, 500);
             this.btPedidos.Name = "btPedidos";
             this.btPedidos.Size = new System.Drawing.Size(298, 58);
             this.btPedidos.TabIndex = 19;
@@ -331,7 +343,7 @@
             // btMenus
             // 
             this.btMenus.BackColor = System.Drawing.SystemColors.Window;
-            this.btMenus.Location = new System.Drawing.Point(423, 491);
+            this.btMenus.Location = new System.Drawing.Point(694, 500);
             this.btMenus.Name = "btMenus";
             this.btMenus.Size = new System.Drawing.Size(298, 58);
             this.btMenus.TabIndex = 20;
@@ -343,7 +355,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(427, 43);
+            this.label1.Location = new System.Drawing.Point(620, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(294, 38);
             this.label1.TabIndex = 47;
@@ -356,7 +368,7 @@
             this.btUpdate.FlatAppearance.BorderSize = 0;
             this.btUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btUpdate.Location = new System.Drawing.Point(748, 49);
+            this.btUpdate.Location = new System.Drawing.Point(1406, 49);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(52, 41);
             this.btUpdate.TabIndex = 48;
@@ -367,48 +379,93 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(395, 429);
+            this.label10.Location = new System.Drawing.Point(1053, 465);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 20);
             this.label10.TabIndex = 12;
             this.label10.Text = "Filtrar";
             // 
-            // label11
+            // dgvTrabalhadores
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(-4, 119);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 20);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Em serviço:";
+            this.dgvTrabalhadores.AllowUserToAddRows = false;
+            this.dgvTrabalhadores.AllowUserToDeleteRows = false;
+            this.dgvTrabalhadores.AutoGenerateColumns = false;
+            this.dgvTrabalhadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTrabalhadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dgvTrabalhadores.DataSource = this.bsTrabalhadores;
+            this.dgvTrabalhadores.Location = new System.Drawing.Point(390, 97);
+            this.dgvTrabalhadores.Name = "dgvTrabalhadores";
+            this.dgvTrabalhadores.ReadOnly = true;
+            this.dgvTrabalhadores.RowHeadersWidth = 51;
+            this.dgvTrabalhadores.RowTemplate.Height = 24;
+            this.dgvTrabalhadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTrabalhadores.Size = new System.Drawing.Size(1068, 360);
+            this.dgvTrabalhadores.TabIndex = 50;
+            this.dgvTrabalhadores.SelectionChanged += new System.EventHandler(this.dgvTrabalhadores_SelectionChanged);
             // 
-            // cbAtivo
+            // Column1
             // 
-            this.cbAtivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAtivo.FormattingEnabled = true;
-            this.cbAtivo.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo"});
-            this.cbAtivo.Location = new System.Drawing.Point(105, 119);
-            this.cbAtivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbAtivo.Name = "cbAtivo";
-            this.cbAtivo.Size = new System.Drawing.Size(113, 24);
-            this.cbAtivo.TabIndex = 20;
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Telemovel";
+            this.Column2.HeaderText = "Telemovel";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Salario";
+            this.Column3.HeaderText = "Salário";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Posicao";
+            this.Column4.HeaderText = "Posição";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Morada";
+            this.Column5.HeaderText = "Morada";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 247;
             // 
             // FormGestaoRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(830, 570);
+            this.ClientSize = new System.Drawing.Size(1471, 570);
+            this.Controls.Add(this.dgvTrabalhadores);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btMenus);
             this.Controls.Add(this.btPedidos);
             this.Controls.Add(this.tbFiltrar);
-            this.Controls.Add(this.lbTrabalhadores);
             this.Controls.Add(this.btNovo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btSave);
@@ -416,8 +473,8 @@
             this.Controls.Add(this.cbRestaurante);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(848, 617);
-            this.MinimumSize = new System.Drawing.Size(848, 617);
+            this.MaximumSize = new System.Drawing.Size(1489, 617);
+            this.MinimumSize = new System.Drawing.Size(1489, 617);
             this.Name = "FormGestaoRestaurante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Gestão Restaurante";
@@ -427,6 +484,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhadores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,7 +495,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbRestaurante;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
@@ -458,7 +516,6 @@
         private System.Windows.Forms.TextBox tbPosicao;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btNovo;
-        private System.Windows.Forms.ListBox lbTrabalhadores;
         private System.Windows.Forms.TextBox tbFiltrar;
         private System.Windows.Forms.Button btPedidos;
         private System.Windows.Forms.Button btMenus;
@@ -467,5 +524,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbAtivo;
+        private System.Windows.Forms.BindingSource bsTrabalhadores;
+        private System.Windows.Forms.DataGridView dgvTrabalhadores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

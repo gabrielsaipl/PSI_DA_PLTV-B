@@ -50,7 +50,6 @@
             this.btNovo = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.btUpdate = new System.Windows.Forms.Button();
@@ -132,7 +131,7 @@
             // 
             // tbFiltrar
             // 
-            this.tbFiltrar.Location = new System.Drawing.Point(106, 495);
+            this.tbFiltrar.Location = new System.Drawing.Point(1058, 497);
             this.tbFiltrar.Name = "tbFiltrar";
             this.tbFiltrar.Size = new System.Drawing.Size(261, 22);
             this.tbFiltrar.TabIndex = 37;
@@ -171,10 +170,8 @@
             this.lvItens.HideSelection = false;
             this.lvItens.LargeImageList = this.imageList1;
             this.lvItens.Location = new System.Drawing.Point(25, 185);
-            this.lvItens.MaximumSize = new System.Drawing.Size(1287, 304);
-            this.lvItens.MinimumSize = new System.Drawing.Size(1287, 304);
             this.lvItens.Name = "lvItens";
-            this.lvItens.Size = new System.Drawing.Size(1287, 304);
+            this.lvItens.Size = new System.Drawing.Size(1294, 304);
             this.lvItens.SmallImageList = this.imageList1;
             this.lvItens.TabIndex = 41;
             this.lvItens.UseCompatibleStateImageBehavior = false;
@@ -204,7 +201,7 @@
             // Categoria
             // 
             this.Categoria.Text = "Categoria";
-            this.Categoria.Width = 125;
+            this.Categoria.Width = 115;
             // 
             // imageList1
             // 
@@ -215,7 +212,7 @@
             // btNovo
             // 
             this.btNovo.BackColor = System.Drawing.SystemColors.Window;
-            this.btNovo.Location = new System.Drawing.Point(457, 497);
+            this.btNovo.Location = new System.Drawing.Point(25, 497);
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(269, 41);
             this.btNovo.TabIndex = 42;
@@ -227,11 +224,10 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.voltarToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.voltarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1324, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1331, 30);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -241,14 +237,6 @@
             this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -276,7 +264,7 @@
             this.btUpdate.FlatAppearance.BorderSize = 0;
             this.btUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btUpdate.Location = new System.Drawing.Point(1260, 129);
+            this.btUpdate.Location = new System.Drawing.Point(1267, 138);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(52, 41);
             this.btUpdate.TabIndex = 46;
@@ -287,7 +275,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(37, 495);
+            this.label4.Location = new System.Drawing.Point(989, 497);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 47;
@@ -298,7 +286,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1324, 541);
+            this.ClientSize = new System.Drawing.Size(1331, 541);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.cbCategoria);
@@ -317,7 +305,8 @@
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
-            this.MinimumSize = new System.Drawing.Size(784, 588);
+            this.MaximumSize = new System.Drawing.Size(1349, 588);
+            this.MinimumSize = new System.Drawing.Size(1349, 588);
             this.Name = "FormItensCadeia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Itens da cadeia";
@@ -345,7 +334,6 @@
         private System.Windows.Forms.Button btNovo;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.ColumnHeader Categoria;

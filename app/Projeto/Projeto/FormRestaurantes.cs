@@ -28,11 +28,6 @@ namespace Projeto
             this.Close();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btNovo_Click(object sender, EventArgs e)
         {
             FormAddRestaurante formAddRestaurante = new FormAddRestaurante();
@@ -41,7 +36,7 @@ namespace Projeto
 
         private void btGerir_Click(object sender, EventArgs e)
         {
-            restauranteSelecionado = lbRestaurantes.SelectedIndex;
+            restauranteSelecionado = dgvRestaurantes.SelectedRows[0].Index;
             FormGestaoRestaurante formGestaoRestaurante = new FormGestaoRestaurante();
             formGestaoRestaurante.ShowDialog();
         }
@@ -53,8 +48,8 @@ namespace Projeto
         {
             if (restGest.Restaurante.Count() > 0)
             {
-                lbRestaurantes.DataSource = null;
-                lbRestaurantes.DataSource = restGest.Restaurante.ToList<Restaurante>();
+                bsRestaurantes.DataSource = null;
+                bsRestaurantes.DataSource = restGest.Restaurante.ToList<Restaurante>();
             }
             else MessageBox.Show("Ainda não existem restaurantes");
         }
@@ -64,22 +59,9 @@ namespace Projeto
             listarRestaurantes();
         }
 
-        private void lbRestaurantes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lbRestaurantes.SelectedIndex >= 0)  // VERIFICA SE EXISTE UM ITEM SELECIONADO
-            {
-                Restaurante restauranteSelecionado = (Restaurante)lbRestaurantes.SelectedItem;
-                tbNome.Text = restauranteSelecionado.Nome;
-                tbPais.Text = restauranteSelecionado.Morada.Pais;
-                tbCidade.Text = restauranteSelecionado.Morada.Cidade;
-                tbRua.Text = restauranteSelecionado.Morada.Rua;
-                tbCodPostal.Text = restauranteSelecionado.Morada.CodPostal;
-            }
-        }
-
         private void btSave_Click(object sender, EventArgs e)
         {
-            if (lbRestaurantes.SelectedIndex >= 0) // VERIFICA SE EXISTE UM ITEM SELECIONADO
+            if (dgvRestaurantes.SelectedRows.Count > 0) // VERIFICA SE EXISTE UM ITEM SELECIONADO
             {
                 string nomeRestaurante = tbNome.Text;
                 string pais = tbPais.Text;
@@ -89,7 +71,7 @@ namespace Projeto
                 // VERIFICA SE ALGUMA TEXTBOX ESTÁ VAZIA
                 if (nomeRestaurante != "" && pais != "" && cidade != "" && rua != "" && codPostal != "")    
                 {
-                    Restaurante restauranteSelecionado = (Restaurante)lbRestaurantes.SelectedItem;
+                    Restaurante restauranteSelecionado = (Restaurante)dgvRestaurantes.SelectedRows[0].DataBoundItem;
                     restauranteSelecionado.Nome = nomeRestaurante;
                     restauranteSelecionado.Morada.Pais = pais;
                     restauranteSelecionado.Morada.Cidade = cidade;
@@ -101,5 +83,17 @@ namespace Projeto
             }
         }
 
+        private void dgvTrabalhadores_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvRestaurantes.SelectedRows.Count > 0)  // VERIFICA SE EXISTE UM ITEM SELECIONADO
+            {
+                Restaurante restauranteSelecionado = (Restaurante)dgvRestaurantes.SelectedRows[0].DataBoundItem;
+                tbNome.Text = restauranteSelecionado.Nome;
+                tbPais.Text = restauranteSelecionado.Morada.Pais;
+                tbCidade.Text = restauranteSelecionado.Morada.Cidade;
+                tbRua.Text = restauranteSelecionado.Morada.Rua;
+                tbCodPostal.Text = restauranteSelecionado.Morada.CodPostal;
+            }
+        }
     }
 }

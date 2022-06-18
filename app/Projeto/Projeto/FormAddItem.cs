@@ -27,11 +27,6 @@ namespace Projeto
             this.Close();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btAdicionar_Click(object sender, EventArgs e)
         {
             if (nomeImagem is null)

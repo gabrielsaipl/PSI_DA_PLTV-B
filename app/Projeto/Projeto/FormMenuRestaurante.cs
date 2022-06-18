@@ -30,11 +30,6 @@ namespace Projeto
             this.Close();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btCategorias_Click(object sender, EventArgs e)
         {
             FormCategorias formCategorias = new FormCategorias();

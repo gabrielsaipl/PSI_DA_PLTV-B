@@ -18,7 +18,7 @@ namespace Projeto
 
         public override string ToString()
         {
-            return $"{Nome} - {Morada}";
+            return $"{Nome}";
         }
     }
 }

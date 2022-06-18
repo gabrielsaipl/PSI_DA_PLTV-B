@@ -25,11 +25,6 @@ namespace Projeto
             this.Close();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btAdicionar_Click(object sender, EventArgs e)
         {
             string pais = tbPais.Text;
@@ -46,6 +41,7 @@ namespace Projeto
                 restGest.Restaurante.Add(novoRestaurante);
 
                 restGest.SaveChanges();     //      GUARDAR NA BASE DE DADOS
+                MessageBox.Show("Clique no botão de atualizar que está acima da lista para que a lista seja atualizada!");
                 this.Close();
             }
             else MessageBox.Show("Insira todos os dados.");

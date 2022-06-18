@@ -26,11 +26,6 @@ namespace Projeto
             this.Close();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btNovo_Click(object sender, EventArgs e)
         {
             if (tbNova.Text != "")
