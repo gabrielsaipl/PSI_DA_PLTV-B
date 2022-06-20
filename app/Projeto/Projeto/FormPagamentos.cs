@@ -25,32 +25,59 @@ namespace Projeto
             listarPagamentos();
         }
 
+        /// <summary>
+        /// Botão que volta ao menu anterior
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
 
         /// <summary>
         /// Listar os métodos de pagamento
         /// </summary>
         private void listarMetodos()
         {
-            cbMetodos.DataSource = null;
-            var metodosPagamento = restGest.MetodoPagamento.ToList<MetodoPagamento>();
-            var metodosPagamentoAtivos = metodosPagamento.Where(metodo => metodo.Ativo == "Ativo").ToList();
-            cbMetodos.DataSource = metodosPagamentoAtivos.ToList();
+            try
+            {
+                cbMetodos.DataSource = null;
+                var metodosPagamento = restGest.MetodoPagamento.ToList<MetodoPagamento>();
+                var metodosPagamentoAtivos = metodosPagamento.Where(metodo => metodo.Ativo == "Ativo").ToList();
+                cbMetodos.DataSource = metodosPagamentoAtivos.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar listar os métodos de pagamento.");
+            }
         }
 
+        /// <summary>
+        /// Botão que abre o formulário de métodos de pagamento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btMetodos_Click(object sender, EventArgs e)
         {
-            FormMetodosPagamento formMetodosPagamento = new FormMetodosPagamento();
-            formMetodosPagamento.ShowDialog();
+            try
+            {
+                FormMetodosPagamento formMetodosPagamento = new FormMetodosPagamento();
+                formMetodosPagamento.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar abrir o formulário.");
+            }
         }
 
+        /// <summary>
+        /// Botão que atualiza os métodos de pagamento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btUpdate_Click(object sender, EventArgs e)
         {
-            cbMetodos.DataSource = null;
             listarMetodos();
             listarPagamentos();
         }
@@ -60,8 +87,16 @@ namespace Projeto
         /// </summary>
         private void listarPagamentos()
         {
-            lbPagamentos.DataSource = null;
-            lbPagamentos.DataSource = pedido.Pagamento.ToList<Pagamento>();
+            try
+            {
+                lbPagamentos.DataSource = null;
+                lbPagamentos.DataSource = pedido.Pagamento.ToList<Pagamento>();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar listar os pagamentos.");
+            }
+            
         }
 
         /// <summary>
@@ -69,25 +104,45 @@ namespace Projeto
         /// </summary>
         private void obterPedido()
         {
-            int idPedido = FormPedidos.idPedido;
-            var pedidos = restGest.Pedido.ToList();
-            var pedidoSelecionado = pedidos.Where(pedido => pedido.IdPedido == idPedido).ToList();
-            pedido = pedidoSelecionado[0] as Pedido;
+            try
+            {
+                int idPedido = FormPedidos.idPedido;
+                var pedidos = restGest.Pedido.ToList();
+                var pedidoSelecionado = pedidos.Where(pedido => pedido.IdPedido == idPedido).ToList();
+                pedido = pedidoSelecionado[0] as Pedido;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao obter o pedido.");
+            }  
         }
 
+        /// <summary>
+        /// Adiciona o pagamento à base de dados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btNovo_Click(object sender, EventArgs e)
         {
-            if (tbValor.Text == "" || cbMetodos.Text == "") return;
-            double valor = Convert.ToDouble(tbValor.Text);
-            if (valor < 0) return;
-            Pagamento novoPagamento = new Pagamento(valor);
-            MetodoPagamento metodoSelecionado = cbMetodos.SelectedItem as MetodoPagamento;
-            novoPagamento.MetodoPagamento = metodoSelecionado;
-            pedido.Pagamento.Add(novoPagamento);
-            restGest.SaveChanges();
-            preencherLabels();
-            listarPagamentos();
-            tbValor.Text = "";
+            try
+            {
+                if (tbValor.Text == "" || cbMetodos.Text == "") return;
+                double valor = Convert.ToDouble(tbValor.Text);
+                if (valor < 0) return;
+                Pagamento novoPagamento = new Pagamento(valor);
+                MetodoPagamento metodoSelecionado = cbMetodos.SelectedItem as MetodoPagamento;
+                novoPagamento.MetodoPagamento = metodoSelecionado;
+                pedido.Pagamento.Add(novoPagamento);
+                restGest.SaveChanges();
+                preencherLabels();
+                listarPagamentos();
+                tbValor.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar adicionar o pagamento.");
+            }
+            
         }
 
         /// <summary>
@@ -95,16 +150,23 @@ namespace Projeto
         /// </summary>
         private void preencherLabels()
         {
-            labelValorAPagar.Text = pedido.ValorTotal.ToString()+"€";
-            double valorPago = 0;
-            foreach (Pagamento pagamento in pedido.Pagamento)
+            try
             {
-                valorPago += pagamento.Valor;
+                labelValorAPagar.Text = pedido.ValorTotal.ToString() + "€";
+                double valorPago = 0;
+                foreach (Pagamento pagamento in pedido.Pagamento)
+                {
+                    valorPago += pagamento.Valor;
+                }
+                labelValorPago.Text = valorPago.ToString() + "€";
+                double troco = valorPago - pedido.ValorTotal;
+                if (troco > 0) labelTroco.Text = troco.ToString() + "€";
+                else labelTroco.Text = "0€";
             }
-            labelValorPago.Text = valorPago.ToString()+"€";
-            double troco = valorPago - pedido.ValorTotal;
-            if (troco > 0) labelTroco.Text = troco.ToString() + "€";
-            else labelTroco.Text = "0€";
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao preencher o valor pago e o valor a pagar.");
+            }
         }
     }
 }

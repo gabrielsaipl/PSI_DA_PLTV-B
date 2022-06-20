@@ -20,37 +20,57 @@ namespace Projeto
             restGest = new RestGestModelContainer();
             preencherComboBox();
         }
-
+        /// <summary>
+        /// Botão para voltar ao menu anterior
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Adiciona trabalhador à base de dados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAdicionar_Click(object sender, EventArgs e)
         {
-            // CRIAR A MORADA DO CLIENTE
-            string pais = tbPais.Text;
-            string cidade = tbCidade.Text;
-            string codPostal = tbCodPostal.Text;
-            string rua = tbRua.Text;
-            Morada novaMorada = new Morada(pais, cidade, codPostal, rua);
-            // CRIAR O CLIENTE
-            string nome = tbNome.Text;
-            string telemovel = tbTelemovel.Text;
-            double salario = Convert.ToDouble(tbSalario.Text);
-            string posicao = tbPosicao.Text;
-            Trabalhador novoTrabalhador = new Trabalhador(nome, telemovel, salario, posicao);
-            // OBTEM RESTAURANTE SELECIONADO
-            Restaurante restauranteSelecionado = cbRestaurante.SelectedItem as Restaurante; 
-            // ATRIBUI ID DO RESTAURANTE E MORADA AO TRABALHADOR
-            novoTrabalhador.Morada = novaMorada;
-            novoTrabalhador.RestauranteIdRestaurante = restauranteSelecionado.IdRestaurante;
-            
-            restGest.Pessoa.Add(novoTrabalhador);
+            try
+            {
+                string pais = tbPais.Text;
+                string cidade = tbCidade.Text;
+                string codPostal = tbCodPostal.Text;
+                string rua = tbRua.Text;
+                string nome = tbNome.Text;
+                string telemovel = tbTelemovel.Text;
+                double salario = Convert.ToDouble(tbSalario.Text);
+                string posicao = tbPosicao.Text;
+                if (pais == "" || cidade == "" || codPostal == "" || rua == "" || nome == "" || telemovel == "" || salario <= 0 || posicao == "")
+                {
+                    MessageBox.Show("Insira todos os campos");
+                    return;
+                }
+                Morada novaMorada = new Morada(pais, cidade, codPostal, rua);
+                Trabalhador novoTrabalhador = new Trabalhador(nome, telemovel, salario, posicao);
+                // OBTEM RESTAURANTE SELECIONADO
+                Restaurante restauranteSelecionado = cbRestaurante.SelectedItem as Restaurante;
+                // ATRIBUI ID DO RESTAURANTE E MORADA AO TRABALHADOR
+                novoTrabalhador.Morada = novaMorada;
+                novoTrabalhador.RestauranteIdRestaurante = restauranteSelecionado.IdRestaurante;
 
-            restGest.SaveChanges();         // GRAVAR ATUALIZAÇÕES
-            MessageBox.Show("Clique no botão de atualizar que está acima da lista para que a lista seja atualizada!");
-            this.Close();
+                restGest.Pessoa.Add(novoTrabalhador);
+
+                restGest.SaveChanges();         // GRAVAR ATUALIZAÇÕES
+                MessageBox.Show("Clique no botão de atualizar que está acima da lista para que a lista seja atualizada!");
+                this.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         /// <summary>
@@ -58,8 +78,16 @@ namespace Projeto
         /// </summary>
         private void preencherComboBox()
         {
-            cbRestaurante.DataSource = restGest.Restaurante.ToList<Restaurante>();
-            cbRestaurante.SelectedIndex = FormGestaoRestaurante.restauranteSelecionado;
+            try
+            {
+                cbRestaurante.DataSource = restGest.Restaurante.ToList<Restaurante>();
+                cbRestaurante.SelectedIndex = FormGestaoRestaurante.restauranteSelecionado;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao preenchar a ComboBox.");
+            }
+            
         }
     }
 }

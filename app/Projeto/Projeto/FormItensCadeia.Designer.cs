@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbPreco = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +53,9 @@
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.btUpdate = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbPreco = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,13 +67,6 @@
             this.label1.Size = new System.Drawing.Size(259, 38);
             this.label1.TabIndex = 26;
             this.label1.Text = "Itens da Cadeia";
-            // 
-            // tbPreco
-            // 
-            this.tbPreco.Location = new System.Drawing.Point(437, 101);
-            this.tbPreco.Name = "tbPreco";
-            this.tbPreco.Size = new System.Drawing.Size(113, 22);
-            this.tbPreco.TabIndex = 27;
             // 
             // label10
             // 
@@ -227,7 +221,7 @@
             this.voltarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1331, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1331, 28);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -281,12 +275,21 @@
             this.label4.TabIndex = 47;
             this.label4.Text = "Filtrar: ";
             // 
+            // tbPreco
+            // 
+            this.tbPreco.DecimalPlaces = 2;
+            this.tbPreco.Location = new System.Drawing.Point(437, 99);
+            this.tbPreco.Name = "tbPreco";
+            this.tbPreco.Size = new System.Drawing.Size(113, 22);
+            this.tbPreco.TabIndex = 49;
+            // 
             // FormItensCadeia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1331, 541);
+            this.Controls.Add(this.tbPreco);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.cbCategoria);
@@ -298,7 +301,6 @@
             this.Controls.Add(this.tbFiltrar);
             this.Controls.Add(this.btGravar);
             this.Controls.Add(this.tbIngredientes);
-            this.Controls.Add(this.tbPreco);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
@@ -312,6 +314,7 @@
             this.Text = "Rest Gest - Itens da cadeia";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPreco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,7 +323,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbPreco;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -344,5 +346,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown tbPreco;
     }
 }

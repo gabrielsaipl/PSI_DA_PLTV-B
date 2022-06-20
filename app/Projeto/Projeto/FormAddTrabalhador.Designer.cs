@@ -33,7 +33,6 @@
             this.btAdicionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbSalario = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPosicao = new System.Windows.Forms.TextBox();
@@ -51,9 +50,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.cbRestaurante = new System.Windows.Forms.ComboBox();
+            this.tbSalario = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSalario)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -63,14 +64,14 @@
             this.voltarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(461, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(461, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(80, 26);
             this.voltarToolStripMenuItem.Text = "Cancelar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -111,13 +112,6 @@
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Trabalhador";
-            // 
-            // tbSalario
-            // 
-            this.tbSalario.Location = new System.Drawing.Point(305, 51);
-            this.tbSalario.Name = "tbSalario";
-            this.tbSalario.Size = new System.Drawing.Size(93, 22);
-            this.tbSalario.TabIndex = 27;
             // 
             // label10
             // 
@@ -278,6 +272,14 @@
             this.cbRestaurante.Size = new System.Drawing.Size(398, 24);
             this.cbRestaurante.TabIndex = 26;
             // 
+            // tbSalario
+            // 
+            this.tbSalario.DecimalPlaces = 2;
+            this.tbSalario.Location = new System.Drawing.Point(305, 50);
+            this.tbSalario.Name = "tbSalario";
+            this.tbSalario.Size = new System.Drawing.Size(93, 22);
+            this.tbSalario.TabIndex = 49;
+            // 
             // FormAddTrabalhador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -302,6 +304,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSalario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,8 +332,8 @@
         private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbPosicao;
-        private System.Windows.Forms.TextBox tbSalario;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbRestaurante;
+        private System.Windows.Forms.NumericUpDown tbSalario;
     }
 }

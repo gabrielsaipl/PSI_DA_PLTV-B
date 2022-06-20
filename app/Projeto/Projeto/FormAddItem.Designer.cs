@@ -32,7 +32,6 @@
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.tbIngredientes = new System.Windows.Forms.TextBox();
-            this.tbPreco = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
@@ -42,8 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btAlterarImagem = new System.Windows.Forms.Button();
             this.pbImagem = new System.Windows.Forms.PictureBox();
+            this.tbPreco = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,13 +81,6 @@
             this.tbIngredientes.Name = "tbIngredientes";
             this.tbIngredientes.Size = new System.Drawing.Size(373, 22);
             this.tbIngredientes.TabIndex = 35;
-            // 
-            // tbPreco
-            // 
-            this.tbPreco.Location = new System.Drawing.Point(118, 137);
-            this.tbPreco.Name = "tbPreco";
-            this.tbPreco.Size = new System.Drawing.Size(93, 22);
-            this.tbPreco.TabIndex = 34;
             // 
             // label10
             // 
@@ -177,19 +171,27 @@
             this.pbImagem.TabIndex = 47;
             this.pbImagem.TabStop = false;
             // 
+            // tbPreco
+            // 
+            this.tbPreco.DecimalPlaces = 2;
+            this.tbPreco.Location = new System.Drawing.Point(118, 137);
+            this.tbPreco.Name = "tbPreco";
+            this.tbPreco.Size = new System.Drawing.Size(120, 22);
+            this.tbPreco.TabIndex = 48;
+            // 
             // FormAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(505, 337);
+            this.Controls.Add(this.tbPreco);
             this.Controls.Add(this.pbImagem);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btAdicionar);
             this.Controls.Add(this.btAlterarImagem);
             this.Controls.Add(this.tbIngredientes);
-            this.Controls.Add(this.tbPreco);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbNome);
@@ -204,6 +206,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPreco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +219,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btAlterarImagem;
         private System.Windows.Forms.TextBox tbIngredientes;
-        private System.Windows.Forms.TextBox tbPreco;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbNome;
@@ -225,5 +227,6 @@
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbImagem;
+        private System.Windows.Forms.NumericUpDown tbPreco;
     }
 }

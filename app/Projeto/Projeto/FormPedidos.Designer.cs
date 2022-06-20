@@ -176,7 +176,7 @@
             // 
             // tbFiltrarMenu
             // 
-            this.tbFiltrarMenu.Location = new System.Drawing.Point(920, 598);
+            this.tbFiltrarMenu.Location = new System.Drawing.Point(1245, 526);
             this.tbFiltrarMenu.Name = "tbFiltrarMenu";
             this.tbFiltrarMenu.Size = new System.Drawing.Size(156, 22);
             this.tbFiltrarMenu.TabIndex = 59;
@@ -194,7 +194,7 @@
             // btAdicionarItem
             // 
             this.btAdicionarItem.BackColor = System.Drawing.SystemColors.Window;
-            this.btAdicionarItem.Location = new System.Drawing.Point(1097, 528);
+            this.btAdicionarItem.Location = new System.Drawing.Point(1097, 554);
             this.btAdicionarItem.Name = "btAdicionarItem";
             this.btAdicionarItem.Size = new System.Drawing.Size(304, 29);
             this.btAdicionarItem.TabIndex = 61;
@@ -205,7 +205,7 @@
             // btRemoverItem
             // 
             this.btRemoverItem.BackColor = System.Drawing.SystemColors.Window;
-            this.btRemoverItem.Location = new System.Drawing.Point(1097, 563);
+            this.btRemoverItem.Location = new System.Drawing.Point(1097, 589);
             this.btRemoverItem.Name = "btRemoverItem";
             this.btRemoverItem.Size = new System.Drawing.Size(304, 29);
             this.btRemoverItem.TabIndex = 63;
@@ -226,7 +226,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(856, 598);
+            this.label3.Location = new System.Drawing.Point(1181, 526);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 20);
             this.label3.TabIndex = 65;

@@ -37,7 +37,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tbPosicao = new System.Windows.Forms.TextBox();
             this.tbTelemovel = new System.Windows.Forms.MaskedTextBox();
-            this.tbSalario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
@@ -67,11 +66,13 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbSalario = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSalario)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -104,11 +105,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbSalario);
             this.groupBox2.Controls.Add(this.cbAtivo);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.tbPosicao);
             this.groupBox2.Controls.Add(this.tbTelemovel);
-            this.groupBox2.Controls.Add(this.tbSalario);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tbNome);
@@ -158,13 +159,6 @@
             this.tbTelemovel.Name = "tbTelemovel";
             this.tbTelemovel.Size = new System.Drawing.Size(90, 22);
             this.tbTelemovel.TabIndex = 12;
-            // 
-            // tbSalario
-            // 
-            this.tbSalario.Location = new System.Drawing.Point(273, 62);
-            this.tbSalario.Name = "tbSalario";
-            this.tbSalario.Size = new System.Drawing.Size(93, 22);
-            this.tbSalario.TabIndex = 12;
             // 
             // label6
             // 
@@ -453,6 +447,14 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 247;
             // 
+            // tbSalario
+            // 
+            this.tbSalario.DecimalPlaces = 2;
+            this.tbSalario.Location = new System.Drawing.Point(273, 60);
+            this.tbSalario.Name = "tbSalario";
+            this.tbSalario.Size = new System.Drawing.Size(93, 22);
+            this.tbSalario.TabIndex = 50;
+            // 
             // FormGestaoRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -486,6 +488,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhadores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSalario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,7 +515,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.MaskedTextBox tbTelemovel;
-        private System.Windows.Forms.TextBox tbSalario;
         private System.Windows.Forms.TextBox tbPosicao;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btNovo;
@@ -531,5 +533,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.NumericUpDown tbSalario;
     }
 }
