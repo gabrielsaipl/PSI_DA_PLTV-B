@@ -244,6 +244,7 @@
             this.btCategorias.TabIndex = 19;
             this.btCategorias.Text = "Categorias";
             this.btCategorias.UseVisualStyleBackColor = false;
+            this.btCategorias.Click += new System.EventHandler(this.btCategorias_Click);
             // 
             // btMetodosPagamento
             // 
@@ -255,6 +256,7 @@
             this.btMetodosPagamento.TabIndex = 20;
             this.btMetodosPagamento.Text = "Métodos de Pagamento";
             this.btMetodosPagamento.UseVisualStyleBackColor = false;
+            this.btMetodosPagamento.Click += new System.EventHandler(this.btMetodosPagamento_Click);
             // 
             // btUpdate
             // 

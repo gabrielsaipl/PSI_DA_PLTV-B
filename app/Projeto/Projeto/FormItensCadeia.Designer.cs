@@ -54,6 +54,7 @@
             this.btUpdate = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tbPreco = new System.Windows.Forms.NumericUpDown();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPreco)).BeginInit();
             this.SuspendLayout();
@@ -283,12 +284,29 @@
             this.tbPreco.Size = new System.Drawing.Size(113, 22);
             this.tbPreco.TabIndex = 49;
             // 
+            // cbTipo
+            // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Detalhes",
+            "Icones Grandes",
+            "Icones Pequenos",
+            "Lista",
+            "Tile"});
+            this.cbTipo.Location = new System.Drawing.Point(1028, 155);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(218, 24);
+            this.cbTipo.TabIndex = 50;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
+            // 
             // FormItensCadeia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1331, 541);
+            this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.tbPreco);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btUpdate);
@@ -347,5 +365,6 @@
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown tbPreco;
+        private System.Windows.Forms.ComboBox cbTipo;
     }
 }

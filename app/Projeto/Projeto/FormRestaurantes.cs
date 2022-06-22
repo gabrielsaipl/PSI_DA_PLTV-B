@@ -160,5 +160,41 @@ namespace Projeto
                 MessageBox.Show("Ocorreu um erro ao tentar selecionar o trabalhador");
             }
         }
+
+        /// <summary>
+        /// Abre o formulário de métodos de pagamento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btMetodosPagamento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormMetodosPagamento formMetodosPagamento = new FormMetodosPagamento();
+                formMetodosPagamento.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar abrir o formulário.");
+            }
+        }
+
+        /// <summary>
+        /// Abre o formulário de métodos de categorias
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btCategorias_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormCategorias formCategorias = new FormCategorias();
+                formCategorias.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar abrir o formulário.");
+            }
+        }
     }
 }

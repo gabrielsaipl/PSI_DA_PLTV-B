@@ -50,6 +50,7 @@
             this.tbFiltrar = new System.Windows.Forms.TextBox();
             this.btUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +95,7 @@
             // btCategorias
             // 
             this.btCategorias.BackColor = System.Drawing.SystemColors.Window;
-            this.btCategorias.Location = new System.Drawing.Point(997, 97);
+            this.btCategorias.Location = new System.Drawing.Point(680, 510);
             this.btCategorias.Name = "btCategorias";
             this.btCategorias.Size = new System.Drawing.Size(199, 43);
             this.btCategorias.TabIndex = 28;
@@ -105,7 +106,7 @@
             // btItensCadeia
             // 
             this.btItensCadeia.BackColor = System.Drawing.SystemColors.Window;
-            this.btItensCadeia.Location = new System.Drawing.Point(792, 97);
+            this.btItensCadeia.Location = new System.Drawing.Point(475, 510);
             this.btItensCadeia.Name = "btItensCadeia";
             this.btItensCadeia.Size = new System.Drawing.Size(199, 43);
             this.btItensCadeia.TabIndex = 27;
@@ -245,12 +246,29 @@
             this.label3.TabIndex = 48;
             this.label3.Text = "Filtrar:";
             // 
+            // cbTipo
+            // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Detalhes",
+            "Icones Grandes",
+            "Icones Pequenos",
+            "Lista",
+            "Tile"});
+            this.cbTipo.Location = new System.Drawing.Point(1034, 132);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(150, 24);
+            this.cbTipo.TabIndex = 51;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
+            // 
             // FormMenuRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1284, 562);
+            this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.tbFiltrar);
@@ -299,5 +317,6 @@
         private System.Windows.Forms.ColumnHeader Categoria;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbTipo;
     }
 }

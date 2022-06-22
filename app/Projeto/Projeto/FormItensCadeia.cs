@@ -22,6 +22,7 @@ namespace Projeto
             criarImageList();
             preencherComboBoxCategorias();
             listarItensCadeia();
+            cbTipo.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -263,5 +264,32 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Troca a forma de como os itens são listados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipoListView = cbTipo.Text;
+            switch(tipoListView)
+            {
+                case "Detalhes":
+                    lvItens.View = View.Details;
+                    break;
+                case "Icones Grandes":
+                    lvItens.View = View.LargeIcon;
+                    break;
+                case "Icones Pequenos":
+                    lvItens.View = View.SmallIcon;
+                    break;
+                case "Lista":
+                    lvItens.View = View.List;
+                    break;
+                case "Tile":
+                    lvItens.View = View.Tile;
+                    break;
+            }
+        }
     }
 }

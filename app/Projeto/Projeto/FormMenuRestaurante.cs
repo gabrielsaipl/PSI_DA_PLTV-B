@@ -23,6 +23,7 @@ namespace Projeto
             listarItensCadeia();
             preencherComboBoxRestaurantes();
             listarItensMenu();
+            cbTipo.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -296,6 +297,34 @@ namespace Projeto
             catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao tentar remover o item do menu do restaurante.");
+            }
+        }
+
+        /// <summary>
+        /// Troca a forma de como os itens são listados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipoListView = cbTipo.Text;
+            switch (tipoListView)
+            {
+                case "Detalhes":
+                    lvItensCadeia.View = View.Details;
+                    break;
+                case "Icones Grandes":
+                    lvItensCadeia.View = View.LargeIcon;
+                    break;
+                case "Icones Pequenos":
+                    lvItensCadeia.View = View.SmallIcon;
+                    break;
+                case "Lista":
+                    lvItensCadeia.View = View.List;
+                    break;
+                case "Tile":
+                    lvItensCadeia.View = View.Tile;
+                    break;
             }
         }
     }

@@ -281,7 +281,7 @@ namespace Projeto
         }
 
         /// <summary>
-        /// Botão que abre o formulário de Menus.
+        /// Botão que abre o formulário de Menus
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -291,6 +291,24 @@ namespace Projeto
             {
                 FormMenuRestaurante FormMenuRestaurante = new FormMenuRestaurante();
                 FormMenuRestaurante.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar abrir o formulário.");
+            }
+        }
+
+        /// <summary>
+        /// Botão que abre o formulário de Estatisticas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void estatísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormEstatisticas formEstatisticas = new FormEstatisticas();
+                formEstatisticas.ShowDialog();
             }
             catch (Exception)
             {
