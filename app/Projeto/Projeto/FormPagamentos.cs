@@ -158,9 +158,9 @@ namespace Projeto
                 {
                     valorPago += pagamento.Valor;
                 }
-                labelValorPago.Text = valorPago.ToString() + "€";
+                labelValorPago.Text = Math.Round(valorPago,2).ToString() + "€";
                 double troco = valorPago - pedido.ValorTotal;
-                if (troco > 0) labelTroco.Text = troco.ToString() + "€";
+                if (troco > 0) labelTroco.Text = Math.Round(troco,2).ToString() + "€";
                 else labelTroco.Text = "0€";
             }
             catch (Exception)

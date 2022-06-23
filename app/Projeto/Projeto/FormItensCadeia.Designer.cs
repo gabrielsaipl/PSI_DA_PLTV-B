@@ -126,7 +126,7 @@
             // 
             // tbFiltrar
             // 
-            this.tbFiltrar.Location = new System.Drawing.Point(1058, 497);
+            this.tbFiltrar.Location = new System.Drawing.Point(1058, 665);
             this.tbFiltrar.Name = "tbFiltrar";
             this.tbFiltrar.Size = new System.Drawing.Size(261, 22);
             this.tbFiltrar.TabIndex = 37;
@@ -166,7 +166,7 @@
             this.lvItens.LargeImageList = this.imageList1;
             this.lvItens.Location = new System.Drawing.Point(25, 185);
             this.lvItens.Name = "lvItens";
-            this.lvItens.Size = new System.Drawing.Size(1294, 304);
+            this.lvItens.Size = new System.Drawing.Size(1294, 461);
             this.lvItens.SmallImageList = this.imageList1;
             this.lvItens.TabIndex = 41;
             this.lvItens.UseCompatibleStateImageBehavior = false;
@@ -186,7 +186,7 @@
             // Ingredientes
             // 
             this.Ingredientes.Text = "Ingredientes";
-            this.Ingredientes.Width = 600;
+            this.Ingredientes.Width = 575;
             // 
             // Ativo
             // 
@@ -207,7 +207,7 @@
             // btNovo
             // 
             this.btNovo.BackColor = System.Drawing.SystemColors.Window;
-            this.btNovo.Location = new System.Drawing.Point(25, 497);
+            this.btNovo.Location = new System.Drawing.Point(25, 665);
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(269, 41);
             this.btNovo.TabIndex = 42;
@@ -270,7 +270,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(989, 497);
+            this.label4.Location = new System.Drawing.Point(989, 665);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 47;
@@ -305,7 +305,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1331, 541);
+            this.ClientSize = new System.Drawing.Size(1331, 716);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.tbPreco);
             this.Controls.Add(this.label4);
@@ -325,8 +325,8 @@
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
-            this.MaximumSize = new System.Drawing.Size(1349, 588);
-            this.MinimumSize = new System.Drawing.Size(1349, 588);
+            this.MaximumSize = new System.Drawing.Size(1349, 763);
+            this.MinimumSize = new System.Drawing.Size(1349, 763);
             this.Name = "FormItensCadeia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Itens da cadeia";

@@ -17,7 +17,7 @@ namespace Projeto
         }
         public override string ToString()
         {
-            return $"{MetodoPagament} - {Ativo}";
+            return $"{MetodoPagament}";
         }
     }
 

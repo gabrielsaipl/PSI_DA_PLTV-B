@@ -43,12 +43,13 @@
             this.métodosDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restaurantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itensDaCadeiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estatísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestãoRestauranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabalhadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.estatísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,7 +136,7 @@
             this.gestãoRestauranteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(590, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(554, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -203,6 +204,13 @@
             this.itensDaCadeiaToolStripMenuItem.Text = "Itens da Cadeia";
             this.itensDaCadeiaToolStripMenuItem.Click += new System.EventHandler(this.itensDaCadeiaToolStripMenuItem_Click);
             // 
+            // estatísticasToolStripMenuItem
+            // 
+            this.estatísticasToolStripMenuItem.Name = "estatísticasToolStripMenuItem";
+            this.estatísticasToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.estatísticasToolStripMenuItem.Text = "Estatísticas";
+            this.estatísticasToolStripMenuItem.Click += new System.EventHandler(this.estatísticasToolStripMenuItem_Click);
+            // 
             // gestãoRestauranteToolStripMenuItem
             // 
             this.gestãoRestauranteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -244,19 +252,25 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Rest Gest";
             // 
-            // estatísticasToolStripMenuItem
+            // button1
             // 
-            this.estatísticasToolStripMenuItem.Name = "estatísticasToolStripMenuItem";
-            this.estatísticasToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
-            this.estatísticasToolStripMenuItem.Text = "Estatísticas";
-            this.estatísticasToolStripMenuItem.Click += new System.EventHandler(this.estatísticasToolStripMenuItem_Click);
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(68, 460);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(423, 96);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Estatísticas";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(590, 450);
+            this.ClientSize = new System.Drawing.Size(554, 573);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bPedidos);
             this.Controls.Add(this.bMenus);
@@ -267,9 +281,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(608, 497);
+            this.MaximumSize = new System.Drawing.Size(572, 620);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(608, 497);
+            this.MinimumSize = new System.Drawing.Size(572, 620);
             this.Name = "FormPrincipal";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,6 +318,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itensDaCadeiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estatísticasToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

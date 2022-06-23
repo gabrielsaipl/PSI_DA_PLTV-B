@@ -42,7 +42,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbCodPostal = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbtotal = new System.Windows.Forms.Label();
             this.tbTelemovel = new System.Windows.Forms.MaskedTextBox();
             this.tbNif = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -186,7 +186,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.lbtotal);
             this.groupBox2.Controls.Add(this.tbTelemovel);
             this.groupBox2.Controls.Add(this.tbNif);
             this.groupBox2.Controls.Add(this.label6);
@@ -201,15 +201,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cliente";
             // 
-            // label10
+            // lbtotal
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(136, 82);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 20);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "0,0 €";
+            this.lbtotal.AutoSize = true;
+            this.lbtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbtotal.Location = new System.Drawing.Point(136, 82);
+            this.lbtotal.Name = "lbtotal";
+            this.lbtotal.Size = new System.Drawing.Size(45, 20);
+            this.lbtotal.TabIndex = 13;
+            this.lbtotal.Text = "0,0 €";
             // 
             // tbTelemovel
             // 
@@ -470,7 +470,7 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btNovoCliente;
         private System.Windows.Forms.TextBox tbFiltrar;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbtotal;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btApagar;

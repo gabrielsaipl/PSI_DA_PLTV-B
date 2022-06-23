@@ -315,5 +315,23 @@ namespace Projeto
                 MessageBox.Show("Ocorreu um erro ao tentar abrir o formulário.");
             }
         }
+        
+        /// <summary>
+        /// Botão que abre o formulário de Estatísticas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormEstatisticas formEstatisticas = new FormEstatisticas();
+                formEstatisticas.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar abrir o formulário.");
+            }
+        }
     }
 }

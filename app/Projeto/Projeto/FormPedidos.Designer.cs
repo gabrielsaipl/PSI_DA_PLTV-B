@@ -81,8 +81,8 @@
             // gravarPedidoToolStripMenuItem
             // 
             this.gravarPedidoToolStripMenuItem.Name = "gravarPedidoToolStripMenuItem";
-            this.gravarPedidoToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
-            this.gravarPedidoToolStripMenuItem.Text = "Exportar Pedido";
+            this.gravarPedidoToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.gravarPedidoToolStripMenuItem.Text = "Exportar Pedido(TXT)";
             this.gravarPedidoToolStripMenuItem.Click += new System.EventHandler(this.gravarPedidoToolStripMenuItem_Click);
             // 
             // cbRestaurante

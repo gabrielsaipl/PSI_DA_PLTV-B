@@ -165,6 +165,7 @@ namespace Projeto
                     Cliente cliente = dgvClientes.SelectedRows[0].DataBoundItem as Cliente;
                     tbNome.Text = cliente.Nome;
                     tbTelemovel.Text = cliente.Telemovel;
+                    lbtotal.Text = cliente.TotalGasto.ToString()+"€";
                     tbNif.Text = cliente.NumContribuinte;
                     tbPais.Text = cliente.Morada.Pais;
                     tbRua.Text = cliente.Morada.Rua;

@@ -18,6 +18,7 @@ namespace Projeto
             InitializeComponent();
             this.ControlBox = false;
             restGest = new RestGestModelContainer();
+            tbSalario.Maximum = decimal.MaxValue;
             preencherComboBox();
         }
         /// <summary>

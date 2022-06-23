@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbClientes = new System.Windows.Forms.Label();
@@ -43,7 +43,6 @@
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.lbGanhosTotais = new System.Windows.Forms.Label();
-            this.chartGanhosRestaurante = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lbTrabalhadores = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.chartTrabalhadores = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -59,9 +58,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbCidadeMaisGastos = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.chartGanhosRestaurante = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartGanhosRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTrabalhadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGanhosRestaurante)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,7 +128,7 @@
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -152,23 +152,6 @@
             this.lbGanhosTotais.TabIndex = 49;
             this.lbGanhosTotais.Text = "0";
             // 
-            // chartGanhosRestaurante
-            // 
-            chartArea15.Name = "ChartArea1";
-            this.chartGanhosRestaurante.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.chartGanhosRestaurante.Legends.Add(legend15);
-            this.chartGanhosRestaurante.Location = new System.Drawing.Point(621, 282);
-            this.chartGanhosRestaurante.Name = "chartGanhosRestaurante";
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series15.Legend = "Legend1";
-            series15.Name = "Ganhos";
-            this.chartGanhosRestaurante.Series.Add(series15);
-            this.chartGanhosRestaurante.Size = new System.Drawing.Size(582, 389);
-            this.chartGanhosRestaurante.TabIndex = 50;
-            this.chartGanhosRestaurante.Text = "chart1";
-            // 
             // lbTrabalhadores
             // 
             this.lbTrabalhadores.AutoSize = true;
@@ -191,17 +174,17 @@
             // 
             // chartTrabalhadores
             // 
-            chartArea16.Name = "ChartArea1";
-            this.chartTrabalhadores.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.chartTrabalhadores.Legends.Add(legend16);
+            chartArea3.Name = "ChartArea1";
+            this.chartTrabalhadores.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartTrabalhadores.Legends.Add(legend3);
             this.chartTrabalhadores.Location = new System.Drawing.Point(45, 282);
             this.chartTrabalhadores.Name = "chartTrabalhadores";
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series16.Legend = "Legend1";
-            series16.Name = "Trabalhadores";
-            this.chartTrabalhadores.Series.Add(series16);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.Legend = "Legend1";
+            series3.Name = "Trabalhadores";
+            this.chartTrabalhadores.Series.Add(series3);
             this.chartTrabalhadores.Size = new System.Drawing.Size(547, 389);
             this.chartTrabalhadores.TabIndex = 53;
             this.chartTrabalhadores.Text = "chart1";
@@ -250,7 +233,7 @@
             // 
             this.lbPedidosCadeia.AutoSize = true;
             this.lbPedidosCadeia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbPedidosCadeia.Location = new System.Drawing.Point(333, 191);
+            this.lbPedidosCadeia.Location = new System.Drawing.Point(347, 191);
             this.lbPedidosCadeia.Name = "lbPedidosCadeia";
             this.lbPedidosCadeia.Size = new System.Drawing.Size(18, 20);
             this.lbPedidosCadeia.TabIndex = 60;
@@ -326,12 +309,30 @@
             this.label12.TabIndex = 65;
             this.label12.Text = "Cidade com mais pedidos efetuados na cadeia:";
             // 
+            // chartGanhosRestaurante
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chartGanhosRestaurante.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartGanhosRestaurante.Legends.Add(legend4);
+            this.chartGanhosRestaurante.Location = new System.Drawing.Point(621, 282);
+            this.chartGanhosRestaurante.Name = "chartGanhosRestaurante";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Legend = "Legend1";
+            series4.Name = "Ganhos";
+            this.chartGanhosRestaurante.Series.Add(series4);
+            this.chartGanhosRestaurante.Size = new System.Drawing.Size(547, 389);
+            this.chartGanhosRestaurante.TabIndex = 67;
+            this.chartGanhosRestaurante.Text = "chart1";
+            // 
             // FormEstatisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1243, 709);
+            this.Controls.Add(this.chartGanhosRestaurante);
             this.Controls.Add(this.lbCidadeMaisGastos);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbMetodoPagamento);
@@ -347,7 +348,6 @@
             this.Controls.Add(this.chartTrabalhadores);
             this.Controls.Add(this.lbTrabalhadores);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.chartGanhosRestaurante);
             this.Controls.Add(this.lbGanhosTotais);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
@@ -359,12 +359,13 @@
             this.MaximumSize = new System.Drawing.Size(1261, 756);
             this.MinimumSize = new System.Drawing.Size(1261, 756);
             this.Name = "FormEstatisticas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rest Gest - Estatísticas";
             this.Load += new System.EventHandler(this.FormEstatisticas_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartGanhosRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTrabalhadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGanhosRestaurante)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,7 +382,6 @@
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbGanhosTotais;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartGanhosRestaurante;
         private System.Windows.Forms.Label lbTrabalhadores;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTrabalhadores;
@@ -397,5 +397,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbCidadeMaisGastos;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartGanhosRestaurante;
     }
 }

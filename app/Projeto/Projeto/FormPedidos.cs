@@ -368,7 +368,11 @@ namespace Projeto
             try
             {
                 Pedido pedidoSelecionado = lbPedidos.SelectedItem as Pedido;
-                if (pedidoSelecionado == null) return;
+                if (pedidoSelecionado == null) 
+                {
+                    MessageBox.Show("Adicione primeiro um pedido à lista.");
+                    return;
+                };
                 ItemMenu itemSelecionado = lbMenu.SelectedItem as ItemMenu;
                 if (itemSelecionado == null) return;
                 pedidoSelecionado.ItemMenu.Add(itemSelecionado);
@@ -494,7 +498,7 @@ namespace Projeto
         {
             try
             {
-                if (restGest.Estado.Count() > 4) return;
+                if (restGest.Estado.Count() >= 4) return;
                 Estado estado1 = new Estado("Recebido");
                 Estado estado2 = new Estado("Em processamento");
                 Estado estado3 = new Estado("Cancelado");

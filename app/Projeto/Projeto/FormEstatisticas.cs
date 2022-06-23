@@ -131,7 +131,7 @@ namespace Projeto
                     {
                         total += pedido.ValorTotal;
                     }
-                    chartGanhosRestaurante.Series["Ganhos"].Points.AddXY(restaurante.Nome, total.ToString());
+                    chartGanhosRestaurante.Series["Ganhos"].Points.AddXY(restaurante.Nome, Convert.ToInt32(total).ToString());
                 }
             }
             catch (Exception)
